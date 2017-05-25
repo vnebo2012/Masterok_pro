@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.my.masterok.masterokpro">
+
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
+
+
+
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".Start_Activity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".HellpActivity"
+            android:label="@string/app_name2" />
+        <activity
+            android:name=".BlokiActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+
+            />
+        <activity
+            android:name=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Pol_Freza_stena_Activity"
+            android:label="@string/title_activity_plitka"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Pol_Activity"
+            android:label="@string/title_activity_plitka2"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Pol_Stena_Activity"
+            android:label="@string/title_activity_plitka3"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Fun8Activity"
+            android:label="@string/title_activity_armo"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".St1_Activity"
+            android:label="@string/title_activity_st1"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".St2_Activity"
+            android:label="@string/title_activity_st2"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Samo_S_Activity"
+            android:label="@string/title_activity_st2"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Samo_A_B_Activity"
+            android:label="@string/title_activity_st2"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Shpaklevka_S_Activity"
+            android:label="@string/title_activity_st22"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Shpaklevka_A_B_Activity"
+            android:label="@string/title_activity_st222"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Plita1Activity"
+            android:label="@string/title_activity_st2212"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Plita2Activity"
+            android:label="@string/title_activity_st22245"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Elektro_Activity"
+            android:label="@string/title_activity_st222452"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Kraska_S_Activity"
+            android:label="@string/title_activity_kr_s2"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Kraska_S_2_Activity"
+            android:label="@string/title_activity_kr_s2"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Penoplast_Activity"
+            android:label="@string/title_activity_kr_s29"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Gipsokarton_P_213_Activity"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
+            android:name=".Gipsokarton_lite_Activity"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
+            android:name=".PlusActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+
+        <activity android:name=".WebMoneyActivity" />
+    </application>
+
+</manifest>
