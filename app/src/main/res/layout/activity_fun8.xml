@@ -28,7 +28,7 @@
 
                 <ImageButton
                     android:id="@+id/dom"
-                    android:layout_width="wrap_content"
+                    android:layout_width="56dp"
                     android:layout_height="wrap_content"
                     android:background="@color/colorPrimary"
                     android:onClick="onClick_dim"
@@ -46,6 +46,15 @@
                     android:textColor="@android:color/white"
                     android:textSize="18dp"
                     android:textStyle="bold|italic" />
+                <ImageButton
+                    android:id="@+id/res"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorPrimary"
+                    android:longClickable="false"
+                    android:scaleType="fitCenter"
+                    android:src="@mipmap/ic_res2" />
+
 
                 <ImageButton
                     android:id="@+id/calk"

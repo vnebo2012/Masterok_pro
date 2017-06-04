@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context=".G">
+    tools:context=".Gipsokarton_P_213_Activity">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
@@ -46,6 +46,16 @@
                     android:textColor="@android:color/white"
                     android:textSize="18dp"
                     android:textStyle="bold|italic" />
+
+                <ImageButton
+                    android:id="@+id/res"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorPrimary"
+                    android:longClickable="false"
+                    android:scaleType="fitCenter"
+                    android:src="@mipmap/ic_res2" />
+
 
                 <ImageButton
                     android:id="@+id/calk"

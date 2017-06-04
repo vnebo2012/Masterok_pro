@@ -18,6 +18,7 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ScrollView;
 import android.widget.TextView;
@@ -1003,18 +1004,20 @@ public class St2_Activity extends AppCompatActivity {
      * Called when the activity is first created.
      */
 
-    final String MY_SETTINGS = "saved_text_st2";
+    final String MY_SETTINGS = "saved_text_st222";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_st2);
 
+
+
         ImageView imageView2 = (ImageView) findViewById(R.id.imageView3);
         TextView textView = (TextView) findViewById(R.id.textView);
 
 
-       // imageView2.setOnClickListener(viewClickListener);
+        // imageView2.setOnClickListener(viewClickListener);
 
 
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
@@ -1034,7 +1037,7 @@ public class St2_Activity extends AppCompatActivity {
         SharedPreferences sp = getSharedPreferences(MY_SETTINGS,
                 Context.MODE_PRIVATE);
         // проверяем, первый ли раз открывается программа
-        boolean hasVisited = sp.getBoolean("hasVisited_st2", false);
+        boolean hasVisited = sp.getBoolean("hasVisited_st222", false);
 
         if (!hasVisited) {
 
@@ -1169,9 +1172,9 @@ public class St2_Activity extends AppCompatActivity {
 
 
 
-                                   // bill230.setText("1"+"/"+"2");
+                                    // bill230.setText("1"+"/"+"2");
                                     //bill231.setText("1"+"/"+"3");
-                                   // bill232.setText("1"+"/"+"4");
+                                    // bill232.setText("1"+"/"+"4");
 
 
 
@@ -1194,9 +1197,146 @@ public class St2_Activity extends AppCompatActivity {
             // startActivity(intent);
 
             SharedPreferences.Editor e = sp.edit();
-            e.putBoolean("hasVisited_st2", true);
+            e.putBoolean("hasVisited_st222", true);
             e.commit(); // не забудьте подтвердить изменения
         }
+
+        ImageButton fa = (ImageButton) findViewById(R.id.res);
+        fa.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                Toast toast = Toast.makeText(getApplicationContext(),
+                        "Востановление...", Toast.LENGTH_SHORT);
+                toast.show();
+
+
+
+                final TextView bill23 = (TextView) findViewById(R.id.button97);
+                final TextView bill24 = (TextView) findViewById(R.id.button98);
+                final TextView bill25 = (TextView) findViewById(R.id.button99);
+                final TextView bill26 = (TextView) findViewById(R.id.button100);
+                final TextView bill27 = (TextView) findViewById(R.id.button101);
+                final TextView bill28 = (TextView) findViewById(R.id.button102);
+                final TextView bill29 = (TextView) findViewById(R.id.button103);
+                final TextView bill30 = (TextView) findViewById(R.id.button104);
+                final TextView bill31 = (TextView) findViewById(R.id.button105);
+                final TextView bill32 = (TextView) findViewById(R.id.button11);
+                final TextView bill33 = (TextView) findViewById(R.id.button12);
+
+
+
+                final TextView bill79 = (TextView) findViewById(R.id.button26);
+                final TextView bill80 = (TextView) findViewById(R.id.button33);
+                final TextView bill81 = (TextView) findViewById(R.id.button34);
+                final TextView bill82 = (TextView) findViewById(R.id.button35);
+
+
+                final TextView bill201 = (TextView) findViewById(R.id.button201);
+                final TextView bill202 = (TextView) findViewById(R.id.button202);
+                final TextView bill203 = (TextView) findViewById(R.id.button203);
+                final TextView bill204 = (TextView) findViewById(R.id.button204);
+                final TextView bill205 = (TextView) findViewById(R.id.button205);
+                final TextView bill206 = (TextView) findViewById(R.id.button206);
+                final TextView bill207 = (TextView) findViewById(R.id.button207);
+                final TextView bill208 = (TextView) findViewById(R.id.button208);
+                final TextView bill209 = (TextView) findViewById(R.id.button209);
+                final TextView bill210 = (TextView) findViewById(R.id.button210);
+                final TextView bill211 = (TextView) findViewById(R.id.button211);
+
+
+
+                final TextView bill230 = (TextView) findViewById(R.id.button230);
+                final TextView bill231 = (TextView) findViewById(R.id.button231);
+                final TextView bill232 = (TextView) findViewById(R.id.button232);
+                final TextView bill233 = (TextView) findViewById(R.id.button233);
+
+                final TextView bill234 = (TextView) findViewById(R.id.button234);
+                final TextView bill235 = (TextView) findViewById(R.id.button235);
+                final TextView bill236 = (TextView) findViewById(R.id.button236);
+
+
+
+                final TextView bill243 = (TextView) findViewById(R.id.button243);
+                final TextView bill244 = (TextView) findViewById(R.id.button244);
+                final TextView bill245 = (TextView) findViewById(R.id.button245);
+                final TextView bill246 = (TextView) findViewById(R.id.button246);
+                final TextView bill247 = (TextView) findViewById(R.id.button247);
+                final TextView bill248 = (TextView) findViewById(R.id.button248);
+
+                final TextView bill301 = (TextView) findViewById(R.id.textView201);
+                final TextView bill302 = (TextView) findViewById(R.id.textView301);
+                final TextView bill303 = (TextView) findViewById(R.id.textView401);
+                final TextView bill304 = (TextView) findViewById(R.id.textView4);
+
+                final TextView bill12 = (TextView) findViewById(R.id.textView142);
+                final TextView bill13 = (TextView) findViewById(R.id.textView143);
+                final TextView bill242 = (TextView) findViewById(R.id.textView242);
+                final TextView bill84 = (TextView) findViewById(R.id.textView20);
+                final TextView bill86 = (TextView) findViewById(R.id.textView24);
+
+
+                etText83 = (TextView) findViewById(R.id.textView14);
+                etText84 = (TextView) findViewById(R.id.textView20);
+                etText85 = (TextView) findViewById(R.id.textView143);
+                etText86 = (TextView) findViewById(R.id.textView24);
+
+                etText301 = (TextView) findViewById(R.id.textView201);
+                etText302 = (TextView) findViewById(R.id.textView301);
+                etText303 = (TextView) findViewById(R.id.textView401);
+                etText304 = (TextView) findViewById(R.id.textView4);
+
+                //  etText89 = (TextView) findViewById(R.id.textView28);
+
+                //final TextView bill75 = (TextView) findViewById(R.id.button36);
+                //final TextView bill76 = (TextView) findViewById(R.id.button37);
+
+
+
+
+
+
+
+                bill13.setText(0.0 + "");
+                bill23.setText(0 + "");
+                bill24.setText(0.5 + "");
+                bill25.setText(0.8 + "");
+                bill26.setText(1 + "");
+                bill27.setText(2 + "");
+                bill28.setText(3 + "");
+                bill29.setText(5 + "");
+                bill30.setText(10 + "");
+                bill31.setText(15 + "");
+                bill32.setText(20 + "");
+                bill33.setText(30 + "");
+
+
+                bill79.setText(30 + "");
+                bill80.setText(50 + "");
+                bill81.setText(70 + "");
+                bill82.setText(100 + "");
+
+                bill12.setText(0.0 + "");
+
+                bill84.setText(0.0 + "");
+                bill86.setText(0.0 + "");
+
+
+
+
+
+                bill242.setText(0.0 + "");
+
+
+
+                // bill230.setText("1"+"/"+"2");
+                //bill231.setText("1"+"/"+"3");
+                // bill232.setText("1"+"/"+"4");
+
+
+
+                return false;
+            }
+        });
 
 
         etText23 = (Button) findViewById(R.id.button97);
@@ -1289,7 +1429,7 @@ public class St2_Activity extends AppCompatActivity {
 
 
 
-       // loadText232();
+        // loadText232();
 
 
 
@@ -1983,7 +2123,7 @@ public class St2_Activity extends AppCompatActivity {
 
 
 
-         button230 = (Button) findViewById(R.id.button230);
+        button230 = (Button) findViewById(R.id.button230);
         final_text230 = (TextView) findViewById(R.id.button230);
         button230.setOnLongClickListener(new View.OnLongClickListener() {
 
@@ -2011,7 +2151,7 @@ public class St2_Activity extends AppCompatActivity {
                                          }
         );
 
-         button231 = (Button) findViewById(R.id.button231);
+        button231 = (Button) findViewById(R.id.button231);
         final_text231 = (TextView) findViewById(R.id.button231);
         button231.setOnLongClickListener(new View.OnLongClickListener() {
 
@@ -2180,8 +2320,8 @@ public class St2_Activity extends AppCompatActivity {
         btn225 = (Button) findViewById(R.id.button225);
         //btn226 = (Button) findViewById(R.id.button226);
         //btn227 = (Button) findViewById(R.id.button227);
-       // btn228 = (Button) findViewById(R.id.button228);
-      //  btn229 = (Button) findViewById(R.id.button229);
+        // btn228 = (Button) findViewById(R.id.button228);
+        //  btn229 = (Button) findViewById(R.id.button229);
         btn230 = (Button) findViewById(R.id.button230);
         btn231 = (Button) findViewById(R.id.button231);
         btn232 = (Button) findViewById(R.id.button232);
@@ -2215,7 +2355,7 @@ public class St2_Activity extends AppCompatActivity {
         wir_6 = (TextView) findViewById(R.id.textViewWir6);
         wir_7 = (TextView) findViewById(R.id.textViewWir7);
         wir_8 = (TextView) findViewById(R.id.textViewWir8);
-       // wir_9 = (TextView) findViewById(R.id.textViewWir9);
+        // wir_9 = (TextView) findViewById(R.id.textViewWir9);
         wir_10 = (TextView) findViewById(R.id.textViewWir10);
         wir_11 = (TextView) findViewById(R.id.textViewWir11);
         wir_12 = (TextView) findViewById(R.id.textViewWir12);
@@ -3518,7 +3658,7 @@ public class St2_Activity extends AppCompatActivity {
                         TextView textView230 = (TextView) findViewById(R.id.textViewWir10);
                         aetText230 = (Button) findViewById(R.id.button230);
                         //float num230 = Float.parseFloat(aetText230.getText().toString());
-                      //  float w230 = (float) num230;
+                        //  float w230 = (float) num230;
                         textView230.setText(String.format(Locale.US, "%.0f", 330.00) + "");
                         Animation anim230 = AnimationUtils.loadAnimation(
                                 getApplicationContext(), R.anim.sms_anim);
@@ -3531,7 +3671,7 @@ public class St2_Activity extends AppCompatActivity {
                         TextView textView231 = (TextView) findViewById(R.id.textViewWir10);
                         aetText231 = (Button) findViewById(R.id.button231);
                         //float num231 = Float.parseFloat(aetText231.getText().toString());
-                       // float w231 = (float) num231;
+                        // float w231 = (float) num231;
                         textView231.setText(String.format(Locale.US, "%.0f", 410.00) + "");
                         Animation anim231 = AnimationUtils.loadAnimation(
                                 getApplicationContext(), R.anim.sms_anim);
@@ -3546,7 +3686,7 @@ public class St2_Activity extends AppCompatActivity {
                         TextView textView232 = (TextView) findViewById(R.id.textViewWir10);
                         aetText232 = (Button) findViewById(R.id.button232);
                         //float num232 = Float.parseFloat(aetText232.getText().toString());
-                       // float w232 = (float) num232;
+                        // float w232 = (float) num232;
                         textView232.setText(String.format(Locale.US, "%.2f", 0.25) + "");
                         Animation anim232 = AnimationUtils.loadAnimation(
                                 getApplicationContext(), R.anim.sms_anim);
@@ -3882,34 +4022,34 @@ public class St2_Activity extends AppCompatActivity {
                 //количество
 
 
-                                float S = (num002);
-                                float V = (float) (num002 *(num008*0.001));
-                                float Cement = (V*num010);
-                                float C = (Cement/50);
-                                float Pesok = (Cement*3);
-                                float Voda = (float) (Cement*0.5);
+                float S = (num002);
+                float V = (float) (num002 *(num008*0.001));
+                float Cement = (V*num010);
+                float C = (Cement/50);
+                float Pesok = (Cement*3);
+                float Voda = (float) (Cement*0.5);
 
 
-                                TextView textView142 = (TextView) findViewById(R.id.textView142);
-                                TextView textView143 = (TextView) findViewById(R.id.textView143);
-                                TextView textView242 = (TextView) findViewById(R.id.textView242);
-                                TextView textView20 = (TextView) findViewById(R.id.textView20);
-                                TextView textView24 = (TextView) findViewById(R.id.textView24);
+                TextView textView142 = (TextView) findViewById(R.id.textView142);
+                TextView textView143 = (TextView) findViewById(R.id.textView143);
+                TextView textView242 = (TextView) findViewById(R.id.textView242);
+                TextView textView20 = (TextView) findViewById(R.id.textView20);
+                TextView textView24 = (TextView) findViewById(R.id.textView24);
 
-                                textView142.setText(String.format(Locale.US, "%.2f", S) + "");
-                                textView143.setText(String.format(Locale.US, "%.2f", V) + "");
-                                textView242.setText(String.format(Locale.US, "%.1f", C) + "");
-                                textView20.setText(String.format(Locale.US, "%.1f", Pesok) + "");
-                                textView24.setText(String.format(Locale.US, "%.1f", Voda) + "");
-
-
+                textView142.setText(String.format(Locale.US, "%.2f", S) + "");
+                textView143.setText(String.format(Locale.US, "%.2f", V) + "");
+                textView242.setText(String.format(Locale.US, "%.1f", C) + "");
+                textView20.setText(String.format(Locale.US, "%.1f", Pesok) + "");
+                textView24.setText(String.format(Locale.US, "%.1f", Voda) + "");
 
 
-                                //Snackbar.make(view, "Подсчитано", Snackbar.LENGTH_SHORT)
-                                //Snackbar.make(view, "Подсчитано", Snackbar.LENGTH_SHORT)
-                                // .setAction("Action", null).show();
-                            }
-                        });
+
+
+                //Snackbar.make(view, "Подсчитано", Snackbar.LENGTH_SHORT)
+                //Snackbar.make(view, "Подсчитано", Snackbar.LENGTH_SHORT)
+                // .setAction("Action", null).show();
+            }
+        });
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnLongClickListener(new View.OnLongClickListener() {
@@ -3932,9 +4072,9 @@ public class St2_Activity extends AppCompatActivity {
 
 
                 Toast toast = Toast.makeText(getApplicationContext(),
-                       "Сброс", Toast.LENGTH_SHORT);
+                        "Сброс", Toast.LENGTH_SHORT);
 
-               toast.show();
+                toast.show();
 
                 return true;
             }
@@ -4290,7 +4430,7 @@ public class St2_Activity extends AppCompatActivity {
 
 
 
-       // saveText232();
+        // saveText232();
 
 
 
@@ -4304,13 +4444,26 @@ public class St2_Activity extends AppCompatActivity {
     }
     @Override
     public void onBackPressed() {
-        //do something on back.
+
+
+            Intent a = new Intent(this, Start_Activity.class);
+            a.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(a);
+        }
+
+
+
+    public void onClick_dim(View view) {
+
+        long mills = 15L;
+        Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+        vibrator.vibrate(mills);
 
         Intent a = new Intent(this, Start_Activity.class);
         a.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(a);
-
     }
+
     public void onClick_Ca(View view) {
         long mills = 15L;
         Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
@@ -4337,17 +4490,6 @@ public class St2_Activity extends AppCompatActivity {
                 startActivity(intent);
             }
         }
-    }
-
-    public void onClick_dim(View view) {
-
-        long mills = 15L;
-        Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
-        vibrator.vibrate(mills);
-
-        Intent a = new Intent(this, Start_Activity.class);
-        a.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-        startActivity(a);
     }
 
 
