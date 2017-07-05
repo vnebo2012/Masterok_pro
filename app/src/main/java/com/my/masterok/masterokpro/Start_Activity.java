@@ -17,14 +17,14 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
 
 public class Start_Activity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
-  // private AdView mAdView;
+    // private AdView mAdView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,9 +32,9 @@ public class Start_Activity extends AppCompatActivity implements NavigationView.
         setContentView(R.layout.activity_main2);
 
 
-     ///   mAdView = (AdView) findViewById(R.id.adView);
-     //   AdRequest adRequest = new AdRequest.Builder().build();
-     //   mAdView.loadAd(adRequest);
+        ///   mAdView = (AdView) findViewById(R.id.adView);
+        //   AdRequest adRequest = new AdRequest.Builder().build();
+        //   mAdView.loadAd(adRequest);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar7);
         setSupportActionBar(toolbar);
@@ -42,11 +42,11 @@ public class Start_Activity extends AppCompatActivity implements NavigationView.
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
-           public void onClick(View view) {
+            public void onClick(View view) {
                 long mills = 15L;
-               Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+                Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
                 vibrator.vibrate(mills);final Intent intent = new Intent(Intent.ACTION_SEND);
-               intent.setType("text/plain");
+                intent.setType("text/plain");
                 String textToSend="https://play.google.com/store/apps/details?id=com.my.masterok.masterokpro";
                 intent.putExtra(Intent.EXTRA_TEXT, textToSend);
                 try
@@ -76,15 +76,24 @@ public class Start_Activity extends AppCompatActivity implements NavigationView.
 
 
 
-       // mAdView = (AdView) findViewById(R.id.adView);
+        // mAdView = (AdView) findViewById(R.id.adView);
         //AdRequest adRequest = new AdRequest.Builder().build();
-       // mAdView.loadAd(adRequest);
-        Button button = (Button) findViewById(R.id.button21);
-        Button button2 = (Button) findViewById(R.id.button210);
-        Button button3 = (Button) findViewById(R.id.button400);
-        Button button4 = (Button) findViewById(R.id.button2412);
-        Button button5 = (Button) findViewById(R.id.button4010);
-        Button button6 = (Button) findViewById(R.id.button407);
+        // mAdView.loadAd(adRequest);
+        //Button button = (Button) findViewById(R.id.button21);
+        //Button button2 = (Button) findViewById(R.id.button210);
+        //Button button3 = (Button) findViewById(R.id.button400);
+        ImageButton button4 = (ImageButton) findViewById(R.id.button2412);
+        ImageButton button = (ImageButton) findViewById(R.id.button2413);
+        ImageButton button2 = (ImageButton) findViewById(R.id.button2414);
+        ImageButton button5 = (ImageButton) findViewById(R.id.button4010);
+        ImageButton button3 = (ImageButton) findViewById(R.id.button400);
+        ImageButton button6 = (ImageButton) findViewById(R.id.button407);
+        ImageButton button7 = (ImageButton) findViewById(R.id.button4071);
+        ImageButton button8 = (ImageButton) findViewById(R.id.button3000);
+        ImageButton button9 = (ImageButton) findViewById(R.id.imageButton11);
+        //Button button5 = (Button) findViewById(R.id.button4010);
+        //Button button6 = (Button) findViewById(R.id.button407);
+        //Button button7 = (Button) findViewById(R.id.button4071);
         TextView textView = (TextView) findViewById(R.id.textView);
 
 
@@ -94,6 +103,9 @@ public class Start_Activity extends AppCompatActivity implements NavigationView.
         button4.setOnClickListener(viewClickListener4);
         button5.setOnClickListener(viewClickListener5);
         button6.setOnClickListener(viewClickListener6);
+        button7.setOnClickListener(viewClickListener7);
+        button8.setOnClickListener(viewClickListener8);
+        button9.setOnClickListener(viewClickListener9);
 //        textView.setOnClickListener(viewClickListener);
 
 
@@ -118,7 +130,7 @@ public class Start_Activity extends AppCompatActivity implements NavigationView.
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-         if (id == R.id.market) {
+        if (id == R.id.market) {
 
             long mills = 15L;
             Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
@@ -149,13 +161,17 @@ public class Start_Activity extends AppCompatActivity implements NavigationView.
                 Toast.makeText(getApplicationContext(), "Some error", Toast.LENGTH_SHORT).show();
 
 
-         } } else if (id == R.id.napisat){
+            } } else if (id == R.id.napisat){
 
-             Intent a = new Intent(this,PlusActivity.class);
-             a.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-             startActivity(a);
+            Intent a = new Intent(this,PlusActivity.class);
+            a.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(a);
 
-         }
+
+
+
+
+        }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
@@ -255,6 +271,42 @@ public class Start_Activity extends AppCompatActivity implements NavigationView.
         Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
         vibrator.vibrate(mills);
     }
+
+    public void onClickObSepik(View view) {
+        Intent a = new Intent(this,Ob_Septik_Activity.class);
+        a.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(a);
+        long mills = 15L;
+        Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+        vibrator.vibrate(mills);
+    }
+
+    public void onClickKr1(View view) {
+        Intent a = new Intent(this,Dvuskat_Activity.class);
+        a.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(a);
+        long mills = 15L;
+        Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+        vibrator.vibrate(mills);
+    }
+
+    public void onClickRadiators(View view) {
+        Intent a = new Intent(this,Radiators_Activity.class);
+        a.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(a);
+        long mills = 15L;
+        Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+        vibrator.vibrate(mills);
+    }
+    public void onClick_Demontag_Steni(View view) {
+        Intent a = new Intent(this,Demontag_steni_Activity.class);
+        a.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(a);
+        long mills = 15L;
+        Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+        vibrator.vibrate(mills);
+    }
+
 
     public void onClick_M(View view) {
         Intent intent = new Intent(Intent.ACTION_VIEW);
@@ -383,7 +435,7 @@ public class Start_Activity extends AppCompatActivity implements NavigationView.
             @Override
             public void onDismiss(PopupMenu menu) {
                 //Toast.makeText(getApplicationContext(), "onDismiss",
-                       // Toast.LENGTH_SHORT).show();
+                // Toast.LENGTH_SHORT).show();
             }
         });
         popupMenu.show();
@@ -656,7 +708,7 @@ public class Start_Activity extends AppCompatActivity implements NavigationView.
                                 Intent intent2 = new Intent(Start_Activity.this, Kraska_S_2_Activity.class);
                                 startActivity(intent2);
                                 long mills2 = 15L;
-                               Vibrator vibrator2 = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+                                Vibrator vibrator2 = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
                                 vibrator2.vibrate(mills2);
 
                                 return true;
@@ -730,6 +782,222 @@ public class Start_Activity extends AppCompatActivity implements NavigationView.
 
 
 
+
+
+                            default:
+                                return false;
+                        }
+                    }
+                });
+
+        popupMenu.setOnDismissListener(new PopupMenu.OnDismissListener() {
+
+            @Override
+            public void onDismiss(PopupMenu menu) {
+                //Toast.makeText(getApplicationContext(), "onDismiss",
+                // Toast.LENGTH_SHORT).show();
+            }
+        });
+        popupMenu.show();
+    }
+
+    View.OnClickListener viewClickListener7 = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            long mills = 15L;
+            Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+            vibrator.vibrate(mills);
+
+
+            showPopupMenu7(v);
+        }
+    };
+
+    private void showPopupMenu7(View v2) {
+        PopupMenu popupMenu = new PopupMenu(this, v2);
+        popupMenu.inflate(R.menu.popupmenu8); // Для Android 4.0
+        // для версии Android 3.0 нужно использовать длинный вариант
+        // popupMenu.getMenuInflater().inflate(R.menu.popupmenu,
+        // popupMenu.getMenu());
+
+        popupMenu
+                .setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+
+                    @Override
+                    public boolean onMenuItemClick(MenuItem item) {
+                        // Toast.makeText(PopupMenuDemoActivity.this,
+                        // item.toString(), Toast.LENGTH_LONG).show();
+                        // return true;
+                        switch (item.getItemId()) {
+
+                            case R.id.menu12:
+                                //пол
+                                Intent intent = new Intent(Start_Activity.this, Ob_Septik_Activity.class);
+                                startActivity(intent);
+                                long mills = 15L;
+                                Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+                                vibrator.vibrate(mills);
+                                return true;
+
+                            case R.id.menu13:
+                                //пол
+                                Intent intent2 = new Intent(Start_Activity.this, Septik_krug_kirpish_Activity.class);
+                                startActivity(intent2);
+                                long mills2 = 15L;
+                                Vibrator vibrator2 = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+                                vibrator2.vibrate(mills2);
+
+                                return true;
+
+
+
+
+
+                            default:
+                                return false;
+                        }
+                    }
+                });
+
+        popupMenu.setOnDismissListener(new PopupMenu.OnDismissListener() {
+
+            @Override
+            public void onDismiss(PopupMenu menu) {
+                //Toast.makeText(getApplicationContext(), "onDismiss",
+                // Toast.LENGTH_SHORT).show();
+            }
+        });
+        popupMenu.show();
+    }
+
+    View.OnClickListener viewClickListener8 = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            long mills = 15L;
+            Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+            vibrator.vibrate(mills);
+
+
+            showPopupMenu8(v);
+        }
+    };
+
+    private void showPopupMenu8(View v2) {
+        PopupMenu popupMenu = new PopupMenu(this, v2);
+        popupMenu.inflate(R.menu.popupmenu9); // Для Android 4.0
+        // для версии Android 3.0 нужно использовать длинный вариант
+        // popupMenu.getMenuInflater().inflate(R.menu.popupmenu,
+        // popupMenu.getMenu());
+
+        popupMenu
+                .setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+
+                    @Override
+                    public boolean onMenuItemClick(MenuItem item) {
+                        // Toast.makeText(PopupMenuDemoActivity.this,
+                        // item.toString(), Toast.LENGTH_LONG).show();
+                        // return true;
+                        switch (item.getItemId()) {
+
+                            case R.id.menu14:
+                                //пол
+                                Intent intent = new Intent(Start_Activity.this, Demontag_steni_Activity.class);
+                                startActivity(intent);
+                                long mills = 15L;
+                                Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+                                vibrator.vibrate(mills);
+                                return true;
+
+                            case R.id.menu15:
+                                //пол
+                                Intent intent2 = new Intent(Start_Activity.this, Demontag_potolki_Activity.class);
+                                startActivity(intent2);
+                                long mills2 = 15L;
+                                Vibrator vibrator2 = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+                                vibrator2.vibrate(mills2);
+                                return true;
+
+                            case R.id.menu16:
+                                //пол
+                                Intent intent3 = new Intent(Start_Activity.this, Demontag_pola_Activity.class);
+                                startActivity(intent3);
+                                long mills3 = 15L;
+                                Vibrator vibrator3 = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+                                vibrator3.vibrate(mills3);
+                                return true;
+
+
+
+
+
+                            default:
+                                return false;
+                        }
+                    }
+                });
+
+        popupMenu.setOnDismissListener(new PopupMenu.OnDismissListener() {
+
+            @Override
+            public void onDismiss(PopupMenu menu) {
+                //Toast.makeText(getApplicationContext(), "onDismiss",
+                // Toast.LENGTH_SHORT).show();
+            }
+        });
+        popupMenu.show();
+    }
+
+    View.OnClickListener viewClickListener9 = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            long mills = 15L;
+            Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+            vibrator.vibrate(mills);
+
+
+            showPopupMenu9(v);
+        }
+    };
+
+    private void showPopupMenu9(View v2) {
+        PopupMenu popupMenu = new PopupMenu(this, v2);
+        popupMenu.inflate(R.menu.popupmenu10); // Для Android 4.0
+        // для версии Android 3.0 нужно использовать длинный вариант
+        // popupMenu.getMenuInflater().inflate(R.menu.popupmenu,
+        // popupMenu.getMenu());
+
+        popupMenu
+                .setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+
+                    @Override
+                    public boolean onMenuItemClick(MenuItem item) {
+                        // Toast.makeText(PopupMenuDemoActivity.this,
+                        // item.toString(), Toast.LENGTH_LONG).show();
+                        // return true;
+                        switch (item.getItemId()) {
+
+                            case R.id.menu17:
+                                //пол
+                                Intent intent = new Intent(Start_Activity.this, Dvuskat_Activity.class);
+                                startActivity(intent);
+                                long mills = 15L;
+                                Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+                                vibrator.vibrate(mills);
+                                return true;
+
+                            case R.id.menu18:
+                                //пол
+                                Intent intent2 = new Intent(Start_Activity.this, Obrewotka_Veranda_Activity.class);
+                                startActivity(intent2);
+                                long mills2 = 15L;
+                                Vibrator vibrator2 = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+                                vibrator2.vibrate(mills2);
+                                return true;
+
+
+
+
+
                             default:
                                 return false;
                         }
@@ -757,7 +1025,7 @@ public class Start_Activity extends AppCompatActivity implements NavigationView.
 
 
 
-        }
+}
 
 
 

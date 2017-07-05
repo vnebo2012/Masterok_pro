@@ -1252,7 +1252,7 @@
                             android:layout_gravity="center_vertical"
                             android:layout_margin="3dp"
                             android:background="@color/colorPrimary"
-                            android:text="Монтаж подрезетника, шт.:"
+                            android:text="Монтаж подрезетника, цена:"
                             android:textColor="@color/colorWite"
                             android:textSize="16sp" />
 
