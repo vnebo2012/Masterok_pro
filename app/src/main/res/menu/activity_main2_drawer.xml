@@ -16,7 +16,7 @@
 
 
 
-            <item
+    <item
                 android:id="@+id/podelica"
                 android:icon="@drawable/ic_menu_share"
                 android:title="Поделится" />
@@ -25,6 +25,11 @@
         android:id="@+id/napisat"
         android:icon="@mipmap/ic_pismo"
         android:title="Написать нам" />
+
+    <item
+        android:id="@+id/news"
+        android:icon="@drawable/ic_contacts"
+        android:title="Статьи" />
 
 
 

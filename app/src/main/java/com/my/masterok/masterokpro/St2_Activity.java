@@ -4490,7 +4490,82 @@ public class St2_Activity extends AppCompatActivity {
             }
         }
     }
+    public void onEmailClick(View v) {
+        long mills = 42L;
+        Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+        vibrator.vibrate(mills);
 
+        //TextView r1-результат text1;
+
+        String emailSubject = getString(R.string.cem_st_s);
+        String na_email = getString(R.string.na_email);
+
+        TextView ob_wir = (TextView) findViewById(R.id.textViewWir2);
+        TextView ob_wir2 = (TextView) findViewById(R.id.textViewWir8);
+        TextView ob_wir3 = (TextView) findViewById(R.id.textViewWir10);
+
+
+
+        TextView rez_text1 = (TextView) findViewById(R.id.textView142);
+        TextView rez_text2 = (TextView) findViewById(R.id.textView143);
+        TextView rez_text3 = (TextView) findViewById(R.id.textView242);
+        TextView rez_text4 = (TextView) findViewById(R.id.textView20);
+        TextView rez_text5 = (TextView) findViewById(R.id.textView24);
+
+
+
+        String rez1 = rez_text1.getText().toString();
+        String rez2 = rez_text2.getText().toString();
+        String rez3 = rez_text3.getText().toString();
+        String rez4 = rez_text4.getText().toString();
+        String rez5 = rez_text5.getText().toString();
+
+
+
+        String ob1 = ob_wir.getText().toString();
+        String ob2 = ob_wir2.getText().toString();
+        String ob3 = ob_wir3.getText().toString();
+
+
+
+
+        String r1 = getString(R.string.s_pom);
+        String r2 = getString(R.string.ob_ras);
+        String r3 = getString(R.string.cement);
+        String r4 = getString(R.string.vlagnost);
+        String r5 = getString(R.string.voda);
+
+        String r6 = getString(R.string.pl_pom);
+        String r7 = getString(R.string.tolsh_st);
+        String r8 = getString(R.string.mark_rast);
+
+
+        String ida = getString(R.string.isxod_dani);
+
+
+        Intent intent = new Intent(Intent.ACTION_SEND);
+        intent.putExtra(Intent.EXTRA_SUBJECT, emailSubject);
+        intent.putExtra(Intent.EXTRA_TEXT, new String(
+
+                (r1)+(rez1)+
+                        "\n"+(r2)+(rez2)+
+                        "\n"+(r3)+(rez3)+
+                        "\n"+(r4)+(rez4)+
+                        "\n"+(r5)+(rez5)+
+                        "\n"+"......."+
+                        "\n"+(ida)+
+                        "\n"+(r6)+(ob1)+
+                        "\n"+(r7)+(ob2)+
+                        "\n"+(r8)+(ob3)
+
+
+
+        ));
+        {
+            intent.setType("plain/text");
+        }
+        startActivity(Intent.createChooser(intent, na_email));
+    }
 
 }
 

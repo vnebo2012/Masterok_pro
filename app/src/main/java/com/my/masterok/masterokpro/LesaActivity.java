@@ -24,8 +24,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.Locale;
+import java.util.Timer;
 
-public class MainActivity extends AppCompatActivity {
+public class LesaActivity extends AppCompatActivity {
 
 
     Button etText;
@@ -39,8 +40,8 @@ public class MainActivity extends AppCompatActivity {
     Button etText9;
     Button etText10;
     Button etText11;
-    Button etText12;
-    Button etText13;
+    TextView etText12;
+    TextView etText13;
     Button etText14;
     Button etText15;
     Button etText16;
@@ -333,9 +334,10 @@ public class MainActivity extends AppCompatActivity {
     private Button btn67;
     private Button btn68;
 
-    private Button btn69;
-    private Button btn70;
-    private Button btn71;
+    private ImageView btn69;
+    private ImageView btn70;
+    private ImageView btn71;
+
     private Button btn72;
 
     private Button btn73;
@@ -676,6 +678,13 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+    static Context context4;
+    Timer t = new Timer();
+    static Intent intent;
+
+
+
+
 
     //endregion
 
@@ -683,15 +692,18 @@ public class MainActivity extends AppCompatActivity {
      * Called when the activity is first created.
      */
 
-    final String MY_SETTINGS = "saved_text_stg100";
+    final String MY_SETTINGS = "saved_text_stg10005";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_kirpish);
+        setContentView(R.layout.activity_lesa);
 
 
-        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+
+
+
+    setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
         imageView = (ImageView) findViewById(R.id.imageView23);
 
@@ -700,15 +712,10 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-
-
-
-
-
         SharedPreferences sp = getSharedPreferences(MY_SETTINGS,
                 Context.MODE_PRIVATE);
         // проверяем, первый ли раз открывается программа
-        boolean hasVisited = sp.getBoolean("hasVisited_stg100", false);
+        boolean hasVisited = sp.getBoolean("hasVisited_stg10005", false);
 
         if (!hasVisited) {
 
@@ -730,7 +737,8 @@ public class MainActivity extends AppCompatActivity {
             final TextView bill10 = (TextView) findViewById(R.id.button39);
             final TextView bill11 = (TextView) findViewById(R.id.button8);
 
-
+            final TextView bill12 = (TextView) findViewById(R.id.textView142);
+            final TextView bill13 = (TextView) findViewById(R.id.textView242);
 
             final TextView bill23 = (TextView) findViewById(R.id.button97);
             final TextView bill24 = (TextView) findViewById(R.id.button98);
@@ -743,8 +751,6 @@ public class MainActivity extends AppCompatActivity {
             final TextView bill31 = (TextView) findViewById(R.id.button105);
             final TextView bill32 = (TextView) findViewById(R.id.button11);
             final TextView bill33 = (TextView) findViewById(R.id.button12);
-
-
 
             final TextView bill40 = (TextView) findViewById(R.id.button61);
             final TextView bill41 = (TextView) findViewById(R.id.button62);
@@ -760,16 +766,10 @@ public class MainActivity extends AppCompatActivity {
             final TextView bill50 = (TextView) findViewById(R.id.button74);
             final TextView bill51 = (TextView) findViewById(R.id.button75);
 
-
             final TextView bill52 = (TextView) findViewById(R.id.button15);
             final TextView bill53 = (TextView) findViewById(R.id.button16);
             final TextView bill54 = (TextView) findViewById(R.id.button17);
             final TextView bill55 = (TextView) findViewById(R.id.button18);
-
-            //final TextView bill56 = (TextView) findViewById(R.id.button21);
-            //final TextView bill57 = (TextView) findViewById(R.id.button22);
-           // final TextView bill58 = (TextView) findViewById(R.id.button23);
-           // final TextView bill59 = (TextView) findViewById(R.id.button24);
 
             final TextView bill60 = (TextView) findViewById(R.id.button27);
             final TextView bill61 = (TextView) findViewById(R.id.button28);
@@ -782,11 +782,6 @@ public class MainActivity extends AppCompatActivity {
             final TextView bill67 = (TextView) findViewById(R.id.button20);
             final TextView bill68 = (TextView) findViewById(R.id.button25);
 
-            // final TextView bill69 = (TextView) findViewById(R.id.button41);
-            // final TextView bill70 = (TextView) findViewById(R.id.button42);
-            // final TextView bill71 = (TextView) findViewById(R.id.button43);
-            //  final TextView bill72 = (TextView) findViewById(R.id.button44);
-
             final TextView bill73 = (TextView) findViewById(R.id.button45);
             final TextView bill74 = (TextView) findViewById(R.id.button46);
 
@@ -797,21 +792,11 @@ public class MainActivity extends AppCompatActivity {
 
             final TextView bill83 = (TextView) findViewById(R.id.textView14);
             final TextView bill84 = (TextView) findViewById(R.id.textView20);
-            //final TextView bill85 = (TextView) findViewById(R.id.textView43);
             final TextView bill86 = (TextView) findViewById(R.id.textView24);
-           // final TextView bill87 = (TextView) findViewById(R.id.textView39);
-           // final TextView bill88 = (TextView) findViewById(R.id.textView37);
-            //final TextView bill89 = (TextView) findViewById(R.id.textView28);
 
             etText83 = (TextView) findViewById(R.id.textView14);
             etText84 = (TextView) findViewById(R.id.textView20);
-           // etText85 = (TextView) findViewById(R.id.textView43);
             etText86 = (TextView) findViewById(R.id.textView24);
-
-          //  etText89 = (TextView) findViewById(R.id.textView28);
-
-            //final TextView bill75 = (TextView) findViewById(R.id.button36);
-            //final TextView bill76 = (TextView) findViewById(R.id.button37);
 
 
 
@@ -823,7 +808,7 @@ public class MainActivity extends AppCompatActivity {
                                 public void onClick(DialogInterface dialog,int id) {
 
 
-                                    //a
+
                                     bill1.setText(0 + "");
                                     bill2.setText(0.5 + "");
                                     bill3.setText(0.8 + "");
@@ -836,8 +821,9 @@ public class MainActivity extends AppCompatActivity {
                                     bill10.setText(20 + "");
                                     bill11.setText(30 + "");
 
+                                    bill12.setText(0.0 + "");
+                                    bill13.setText(0.0 + "");
 
-                                    //b
                                     bill23.setText(0 + "");
                                     bill24.setText(0.5 + "");
                                     bill25.setText(0.8 + "");
@@ -850,63 +836,48 @@ public class MainActivity extends AppCompatActivity {
                                     bill32.setText(20 + "");
                                     bill33.setText(30 + "");
 
+                                    bill40.setText(2 + "");
+                                    bill41.setText(2.5 + "");
+                                    bill42.setText(3 + "");
+                                    bill43.setText(5 + "");
+                                    bill44.setText(12 + "");
+                                    bill45.setText(16 + "");
 
+                                    bill46.setText(2 + "");
+                                    bill47.setText(2.5 + "");
+                                    bill48.setText(3 + "");
+                                    bill49.setText(3.2 + "");
+                                    bill50.setText(3.5 + "");
+                                    bill51.setText(3.8 + "");
 
-                                    bill40.setText(0 + "");
-                                    bill41.setText(10 + "");
-                                    bill42.setText(12 + "");
-                                    bill43.setText(15 + "");
-                                    bill44.setText(18 + "");
-                                    bill45.setText(20 + "");
+                                    bill52.setText(10 + "");
+                                    bill53.setText(20 + "");
+                                    bill54.setText(30 + "");
+                                    bill55.setText(40 + "");
+                                    bill73.setText(50 + "");
+                                    bill74.setText(100 + "");
 
-                                    bill46.setText(0 + "");
-                                    bill47.setText(1000 + "");
-                                    bill48.setText(1100 + "");
-                                    bill49.setText(1150 + "");
-                                    bill50.setText(1200 + "");
-                                    bill51.setText(1400 + "");
+                                    bill60.setText(1 + "");
+                                    bill61.setText(2 + "");
+                                    bill62.setText(7 + "");
+                                    bill63.setText(14 + "");
+                                    bill64.setText(21 + "");
+                                    bill65.setText(30 + "");
 
+                                    bill66.setText(0.90 + "");
+                                    bill67.setText(1.00 + "");
+                                    bill68.setText(1.10 + "");
 
-                                    bill52.setText(248 + "");
-                                    bill53.setText(249 + "");
-                                    bill54.setText(250 + "");
-                                    bill55.setText(260 + "");
-                                    bill73.setText(270 + "");
-                                    bill74.setText(275 + "");
-
-
-
-                                    bill60.setText(115 + "");
-                                    bill61.setText(117 + "");
-                                    bill62.setText(120 + "");
-                                    bill63.setText(125 + "");
-                                    bill64.setText(126 + "");
-                                    bill65.setText(130 + "");
-
-                                    bill66.setText(40 + "");
-                                    bill67.setText(65 + "");
-                                    bill68.setText(75 + "");
-
-                                    //bill69.setText(1 + "");
-                                    // bill72.setText(2 + "");
-                                    // bill70.setText(3 + "");
-
-
-
-
-
-
-                                    bill79.setText(9 + "");
-                                    bill80.setText(10 + "");
-                                    bill81.setText(11 + "");
-                                    bill82.setText(12 + "");
+                                    bill79.setText(1 + "");
+                                    bill80.setText(2 + "");
+                                    bill81.setText(2.2 + "");
+                                    bill82.setText(2.5 + "");
 
                                     bill83.setText(00.00 + "");
                                     bill84.setText(00.00 + "");
-                                    //bill85.setText(00.00 + "");
                                     bill86.setText(00.00 + "");
 
-                                    //bill89.setText(00.00 + "");
+
 
 
 
@@ -916,7 +887,7 @@ public class MainActivity extends AppCompatActivity {
             alertDialog.show();
 
 
-            long mills = 70L;
+            long mills = 15L;
             Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
             vibrator.vibrate(mills);
 
@@ -926,9 +897,10 @@ public class MainActivity extends AppCompatActivity {
             // startActivity(intent);
 
             SharedPreferences.Editor e = sp.edit();
-            e.putBoolean("hasVisited_stg100", true);
+            e.putBoolean("hasVisited_stg10005", true);
             e.commit(); // не забудьте подтвердить изменения
         }
+
 
 
 
@@ -946,6 +918,8 @@ public class MainActivity extends AppCompatActivity {
         etText9 = (Button) findViewById(R.id.button40);
         etText10 = (Button) findViewById(R.id.button39);
         etText11 = (Button) findViewById(R.id.button8);
+
+
 
 
 
@@ -985,6 +959,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         etText60 = (Button) findViewById(R.id.button27);
+        etText61 = (Button) findViewById(R.id.button28);
 
         etText62 = (Button) findViewById(R.id.button29);
         etText63 = (Button) findViewById(R.id.button30);
@@ -995,16 +970,16 @@ public class MainActivity extends AppCompatActivity {
         etText67 = (Button) findViewById(R.id.button20);
         etText68 = (Button) findViewById(R.id.button25);
 
-        etText69 = (Button) findViewById(R.id.button41);
-        etText70 = (Button) findViewById(R.id.button42);
-        etText71 = (Button) findViewById(R.id.button43);
-        etText72 = (Button) findViewById(R.id.button44);
+        //etText69 = (Button) findViewById(R.id.button41);
+       // etText70 = (Button) findViewById(R.id.button42);
+      //  etText71 = (Button) findViewById(R.id.button43);
+        //etText72 = (Button) findViewById(R.id.button44);
 
         etText73 = (Button) findViewById(R.id.button45);
         etText74 = (Button) findViewById(R.id.button46);
 
         //etText77 = (Button) findViewById(R.id.button36);
-       // etText78 = (Button) findViewById(R.id.button37);
+        // etText78 = (Button) findViewById(R.id.button37);
 
         etText79 = (Button) findViewById(R.id.button26);
         etText80 = (Button) findViewById(R.id.button33);
@@ -1013,10 +988,13 @@ public class MainActivity extends AppCompatActivity {
 
         etText83 = (TextView) findViewById(R.id.textView14);
         etText84 = (TextView) findViewById(R.id.textView20);
-       // etText85 = (TextView) findViewById(R.id.textView43);
+        // etText85 = (TextView) findViewById(R.id.textView43);
         etText86 = (TextView) findViewById(R.id.textView24);
 
-       // etText89 = (TextView) findViewById(R.id.textView28);
+        etText12 = (TextView) findViewById(R.id.textView142);
+        etText13 = (TextView) findViewById(R.id.textView242);
+
+        // etText89 = (TextView) findViewById(R.id.textView28);
 
 
 
@@ -1033,6 +1011,11 @@ public class MainActivity extends AppCompatActivity {
         loadText9();
         loadText10();
         loadText11();
+
+        loadText12();
+        loadText13();
+
+
 
 
 
@@ -1074,6 +1057,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         loadText60();
+        loadText61();
 
         loadText62();
         loadText63();
@@ -1101,7 +1085,7 @@ public class MainActivity extends AppCompatActivity {
         //loadText85();
         loadText86();
 
-       // loadText89();
+        // loadText89();
 
 
 
@@ -2333,7 +2317,7 @@ public class MainActivity extends AppCompatActivity {
                                              @Override
                                              public boolean onLongClick(View arg0) {
                                                  LayoutInflater li = LayoutInflater.from(context2);
-                                                 final View promptsView = li.inflate(R.layout.prompt3, null);
+                                                 final View promptsView = li.inflate(R.layout.prompt, null);
                                                  AlertDialog.Builder mDialogBuilder = new AlertDialog.Builder(context2);
                                                  mDialogBuilder.setView(promptsView);
 
@@ -2377,7 +2361,7 @@ public class MainActivity extends AppCompatActivity {
                                              @Override
                                              public boolean onLongClick(View arg0) {
                                                  LayoutInflater li = LayoutInflater.from(context2);
-                                                 final View promptsView = li.inflate(R.layout.prompt3, null);
+                                                 final View promptsView = li.inflate(R.layout.prompt, null);
                                                  AlertDialog.Builder mDialogBuilder = new AlertDialog.Builder(context2);
                                                  mDialogBuilder.setView(promptsView);
 
@@ -2421,7 +2405,7 @@ public class MainActivity extends AppCompatActivity {
                                              @Override
                                              public boolean onLongClick(View arg0) {
                                                  LayoutInflater li = LayoutInflater.from(context2);
-                                                 final View promptsView = li.inflate(R.layout.prompt3, null);
+                                                 final View promptsView = li.inflate(R.layout.prompt, null);
                                                  AlertDialog.Builder mDialogBuilder = new AlertDialog.Builder(context2);
                                                  mDialogBuilder.setView(promptsView);
 
@@ -2465,7 +2449,7 @@ public class MainActivity extends AppCompatActivity {
                                              @Override
                                              public boolean onLongClick(View arg0) {
                                                  LayoutInflater li = LayoutInflater.from(context2);
-                                                 final View promptsView = li.inflate(R.layout.prompt3, null);
+                                                 final View promptsView = li.inflate(R.layout.prompt, null);
                                                  AlertDialog.Builder mDialogBuilder = new AlertDialog.Builder(context2);
                                                  mDialogBuilder.setView(promptsView);
 
@@ -2509,7 +2493,7 @@ public class MainActivity extends AppCompatActivity {
                                              @Override
                                              public boolean onLongClick(View arg0) {
                                                  LayoutInflater li = LayoutInflater.from(context2);
-                                                 final View promptsView = li.inflate(R.layout.prompt3, null);
+                                                 final View promptsView = li.inflate(R.layout.prompt, null);
                                                  AlertDialog.Builder mDialogBuilder = new AlertDialog.Builder(context2);
                                                  mDialogBuilder.setView(promptsView);
 
@@ -2553,7 +2537,7 @@ public class MainActivity extends AppCompatActivity {
                                              @Override
                                              public boolean onLongClick(View arg0) {
                                                  LayoutInflater li = LayoutInflater.from(context2);
-                                                 final View promptsView = li.inflate(R.layout.prompt3, null);
+                                                 final View promptsView = li.inflate(R.layout.prompt, null);
                                                  AlertDialog.Builder mDialogBuilder = new AlertDialog.Builder(context2);
                                                  mDialogBuilder.setView(promptsView);
 
@@ -2794,7 +2778,7 @@ public class MainActivity extends AppCompatActivity {
                                              @Override
                                              public boolean onLongClick(View arg0) {
                                                  LayoutInflater li = LayoutInflater.from(context2);
-                                                 final View promptsView = li.inflate(R.layout.prompt4, null);
+                                                 final View promptsView = li.inflate(R.layout.prompt, null);
                                                  AlertDialog.Builder mDialogBuilder = new AlertDialog.Builder(context2);
                                                  mDialogBuilder.setView(promptsView);
 
@@ -2838,7 +2822,7 @@ public class MainActivity extends AppCompatActivity {
                                              @Override
                                              public boolean onLongClick(View arg0) {
                                                  LayoutInflater li = LayoutInflater.from(context2);
-                                                 final View promptsView = li.inflate(R.layout.prompt4, null);
+                                                 final View promptsView = li.inflate(R.layout.prompt, null);
                                                  AlertDialog.Builder mDialogBuilder = new AlertDialog.Builder(context2);
                                                  mDialogBuilder.setView(promptsView);
 
@@ -2882,7 +2866,7 @@ public class MainActivity extends AppCompatActivity {
                                              @Override
                                              public boolean onLongClick(View arg0) {
                                                  LayoutInflater li = LayoutInflater.from(context2);
-                                                 final View promptsView = li.inflate(R.layout.prompt4, null);
+                                                 final View promptsView = li.inflate(R.layout.prompt, null);
                                                  AlertDialog.Builder mDialogBuilder = new AlertDialog.Builder(context2);
                                                  mDialogBuilder.setView(promptsView);
 
@@ -2926,7 +2910,7 @@ public class MainActivity extends AppCompatActivity {
                                              @Override
                                              public boolean onLongClick(View arg0) {
                                                  LayoutInflater li = LayoutInflater.from(context2);
-                                                 final View promptsView = li.inflate(R.layout.prompt4, null);
+                                                 final View promptsView = li.inflate(R.layout.prompt, null);
                                                  AlertDialog.Builder mDialogBuilder = new AlertDialog.Builder(context2);
                                                  mDialogBuilder.setView(promptsView);
 
@@ -2974,7 +2958,7 @@ public class MainActivity extends AppCompatActivity {
                                              @Override
                                              public boolean onLongClick(View arg0) {
                                                  LayoutInflater li = LayoutInflater.from(context2);
-                                                 final View promptsView = li.inflate(R.layout.prompt4, null);
+                                                 final View promptsView = li.inflate(R.layout.prompt, null);
                                                  AlertDialog.Builder mDialogBuilder = new AlertDialog.Builder(context2);
                                                  mDialogBuilder.setView(promptsView);
 
@@ -3018,7 +3002,7 @@ public class MainActivity extends AppCompatActivity {
                                              @Override
                                              public boolean onLongClick(View arg0) {
                                                  LayoutInflater li = LayoutInflater.from(context2);
-                                                 final View promptsView = li.inflate(R.layout.prompt4, null);
+                                                 final View promptsView = li.inflate(R.layout.prompt, null);
                                                  AlertDialog.Builder mDialogBuilder = new AlertDialog.Builder(context2);
                                                  mDialogBuilder.setView(promptsView);
 
@@ -3062,7 +3046,7 @@ public class MainActivity extends AppCompatActivity {
                                              @Override
                                              public boolean onLongClick(View arg0) {
                                                  LayoutInflater li = LayoutInflater.from(context2);
-                                                 final View promptsView = li.inflate(R.layout.prompt3, null);
+                                                 final View promptsView = li.inflate(R.layout.prompt, null);
                                                  AlertDialog.Builder mDialogBuilder = new AlertDialog.Builder(context2);
                                                  mDialogBuilder.setView(promptsView);
 
@@ -3106,7 +3090,7 @@ public class MainActivity extends AppCompatActivity {
                                              @Override
                                              public boolean onLongClick(View arg0) {
                                                  LayoutInflater li = LayoutInflater.from(context2);
-                                                 final View promptsView = li.inflate(R.layout.prompt3, null);
+                                                 final View promptsView = li.inflate(R.layout.prompt, null);
                                                  AlertDialog.Builder mDialogBuilder = new AlertDialog.Builder(context2);
                                                  mDialogBuilder.setView(promptsView);
 
@@ -3150,7 +3134,7 @@ public class MainActivity extends AppCompatActivity {
                                              @Override
                                              public boolean onLongClick(View arg0) {
                                                  LayoutInflater li = LayoutInflater.from(context2);
-                                                 final View promptsView = li.inflate(R.layout.prompt3, null);
+                                                 final View promptsView = li.inflate(R.layout.prompt, null);
                                                  AlertDialog.Builder mDialogBuilder = new AlertDialog.Builder(context2);
                                                  mDialogBuilder.setView(promptsView);
 
@@ -3191,94 +3175,10 @@ public class MainActivity extends AppCompatActivity {
         //endregion
 
         //region секция 10
-        button169 = (Button) findViewById(R.id.button41);
-        final_text69 = (TextView) findViewById(R.id.button41);
-        button169.setOnLongClickListener(new View.OnLongClickListener() {
-                                             //region button123
-                                             @Override
-                                             public boolean onLongClick(View arg0) {
-                                                 LayoutInflater li = LayoutInflater.from(context2);
-                                                 final View promptsView = li.inflate(R.layout.prompt6, null);
-                                                 AlertDialog.Builder mDialogBuilder = new AlertDialog.Builder(context2);
-                                                 mDialogBuilder.setView(promptsView);
-
-                                                 //final EditText userInput = (EditText) promptsView.findViewById(R.id.editText2);
-
-                                                 mDialogBuilder
-                                                         .setCancelable(false)
-                                                         .setPositiveButton("OK",
-                                                                 new DialogInterface.OnClickListener() {
-                                                                     public void onClick(DialogInterface dialog, int id) {
-                                                                     }
-                                                                 });
-
-                                                 AlertDialog alertDialog = mDialogBuilder.create();
-                                                 alertDialog.show();
-                                                 return false;
-                                             }
-                                         }
-        );
 
 
-        //endregion
-
-        button170 = (Button) findViewById(R.id.button42);
-        final_text70 = (TextView) findViewById(R.id.button42);
-        button170.setOnLongClickListener(new View.OnLongClickListener() {
-                                             //region button124
-                                             @Override
-                                             public boolean onLongClick(View arg0) {
-                                                 LayoutInflater li = LayoutInflater.from(context2);
-                                                 final View promptsView = li.inflate(R.layout.prompt6, null);
-                                                 AlertDialog.Builder mDialogBuilder = new AlertDialog.Builder(context2);
-                                                 mDialogBuilder.setView(promptsView);
-
-                                                 //final EditText userInput = (EditText) promptsView.findViewById(R.id.editText2);
-
-                                                 mDialogBuilder
-                                                         .setCancelable(false)
-                                                         .setPositiveButton("OK",
-                                                                 new DialogInterface.OnClickListener() {
-                                                                     public void onClick(DialogInterface dialog, int id) {
-                                                                     }
-                                                                 });
-
-                                                 AlertDialog alertDialog = mDialogBuilder.create();
-                                                 alertDialog.show();
-                                                 return false;
-                                             }
-                                         }
-        );
-        //endregion
 
 
-        button172 = (Button) findViewById(R.id.button44);
-        final_text72 = (TextView) findViewById(R.id.button44);
-        button172.setOnLongClickListener(new View.OnLongClickListener() {
-                                             //region button114
-                                             @Override
-                                             public boolean onLongClick(View arg0) {
-                                                 LayoutInflater li = LayoutInflater.from(context2);
-                                                 final View promptsView = li.inflate(R.layout.prompt6, null);
-                                                 AlertDialog.Builder mDialogBuilder = new AlertDialog.Builder(context2);
-                                                 mDialogBuilder.setView(promptsView);
-
-                                                 //final EditText userInput = (EditText) promptsView.findViewById(R.id.editText2);
-
-                                                 mDialogBuilder
-                                                         .setCancelable(false)
-                                                         .setPositiveButton("OK",
-                                                                 new DialogInterface.OnClickListener() {
-                                                                     public void onClick(DialogInterface dialog, int id) {
-                                                                     }
-                                                                 });
-
-                                                 AlertDialog alertDialog = mDialogBuilder.create();
-                                                 alertDialog.show();
-                                                 return false;
-                                             }
-                                         }
-        );
 
         //endregion
 
@@ -3390,18 +3290,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        imageView1 = (ImageView) findViewById(R.id.imageView24);
-        imageView1.setOnClickListener(new View.OnClickListener() {
-                                          //region button124
-                                          @Override
-                                          public void onClick(View arg0) {
-                                              Toast toast = Toast.makeText(getApplicationContext(),
-                                                      "Оптимальный слой 10 - 12 мм", Toast.LENGTH_LONG);
 
-                                              toast.show();
-                                          }
-                                      }
-        );
         //endregion
 
 
@@ -3675,9 +3564,10 @@ public class MainActivity extends AppCompatActivity {
         btn67 = (Button) findViewById(R.id.button20);
         btn68 = (Button) findViewById(R.id.button25);
 
-        btn69 = (Button) findViewById(R.id.button41);
-        btn70 = (Button) findViewById(R.id.button42);
-        btn71 = (Button) findViewById(R.id.button43);
+        btn69 = (ImageView) findViewById(R.id.imageView23);
+        btn70 = (ImageView) findViewById(R.id.imageView31);
+        btn71 = (ImageView) findViewById(R.id.imageView4);
+
         btn72 = (Button) findViewById(R.id.button44);
 
         btn73 = (Button) findViewById(R.id.button450);
@@ -3685,7 +3575,7 @@ public class MainActivity extends AppCompatActivity {
         btn75 = (Button) findViewById(R.id.button461);
 
         //btn77 = (Button) findViewById(R.id.button36);
-       // btn78 = (Button) findViewById(R.id.button37);
+        // btn78 = (Button) findViewById(R.id.button37);
 
         btn79 = (Button) findViewById(R.id.button26);
         btn80 = (Button) findViewById(R.id.button33);
@@ -3705,7 +3595,7 @@ public class MainActivity extends AppCompatActivity {
         wir_6 = (TextView) findViewById(R.id.textViewWir6);
 
         wir_7 = (TextView) findViewById(R.id.textViewWir7);
-       // wir_8 = (TextView) findViewById(R.id.textViewWir8);
+        // wir_8 = (TextView) findViewById(R.id.textViewWir8);
         wir_9 = (TextView) findViewById(R.id.textViewWir9);
         wir_10 = (TextView) findViewById(R.id.textViewWir10);
         wir_11 = (TextView) findViewById(R.id.textViewWir11);
@@ -3726,7 +3616,7 @@ public class MainActivity extends AppCompatActivity {
                 Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
                 vibrator.vibrate(mills);
 
-                final TextView bill = (TextView) findViewById(R.id.button11);
+                final TextView bill = (TextView) findViewById(R.id.button8);
                 if (bill.getText().length() == 0)
                 {
                     Toast toast = Toast.makeText(getApplicationContext(),
@@ -3746,7 +3636,8 @@ public class MainActivity extends AppCompatActivity {
                     final TextView bill10 = (TextView) findViewById(R.id.button39);
                     final TextView bill11 = (TextView) findViewById(R.id.button8);
 
-
+                    final TextView bill12 = (TextView) findViewById(R.id.textView142);
+                    final TextView bill13 = (TextView) findViewById(R.id.textView242);
 
                     final TextView bill23 = (TextView) findViewById(R.id.button97);
                     final TextView bill24 = (TextView) findViewById(R.id.button98);
@@ -3759,8 +3650,6 @@ public class MainActivity extends AppCompatActivity {
                     final TextView bill31 = (TextView) findViewById(R.id.button105);
                     final TextView bill32 = (TextView) findViewById(R.id.button11);
                     final TextView bill33 = (TextView) findViewById(R.id.button12);
-
-
 
                     final TextView bill40 = (TextView) findViewById(R.id.button61);
                     final TextView bill41 = (TextView) findViewById(R.id.button62);
@@ -3776,16 +3665,10 @@ public class MainActivity extends AppCompatActivity {
                     final TextView bill50 = (TextView) findViewById(R.id.button74);
                     final TextView bill51 = (TextView) findViewById(R.id.button75);
 
-
                     final TextView bill52 = (TextView) findViewById(R.id.button15);
                     final TextView bill53 = (TextView) findViewById(R.id.button16);
                     final TextView bill54 = (TextView) findViewById(R.id.button17);
                     final TextView bill55 = (TextView) findViewById(R.id.button18);
-
-                    //final TextView bill56 = (TextView) findViewById(R.id.button21);
-                    //final TextView bill57 = (TextView) findViewById(R.id.button22);
-                    // final TextView bill58 = (TextView) findViewById(R.id.button23);
-                    // final TextView bill59 = (TextView) findViewById(R.id.button24);
 
                     final TextView bill60 = (TextView) findViewById(R.id.button27);
                     final TextView bill61 = (TextView) findViewById(R.id.button28);
@@ -3798,11 +3681,6 @@ public class MainActivity extends AppCompatActivity {
                     final TextView bill67 = (TextView) findViewById(R.id.button20);
                     final TextView bill68 = (TextView) findViewById(R.id.button25);
 
-                    // final TextView bill69 = (TextView) findViewById(R.id.button41);
-                    // final TextView bill70 = (TextView) findViewById(R.id.button42);
-                    // final TextView bill71 = (TextView) findViewById(R.id.button43);
-                    //  final TextView bill72 = (TextView) findViewById(R.id.button44);
-
                     final TextView bill73 = (TextView) findViewById(R.id.button45);
                     final TextView bill74 = (TextView) findViewById(R.id.button46);
 
@@ -3813,104 +3691,83 @@ public class MainActivity extends AppCompatActivity {
 
                     final TextView bill83 = (TextView) findViewById(R.id.textView14);
                     final TextView bill84 = (TextView) findViewById(R.id.textView20);
-                    //final TextView bill85 = (TextView) findViewById(R.id.textView43);
                     final TextView bill86 = (TextView) findViewById(R.id.textView24);
-                    // final TextView bill87 = (TextView) findViewById(R.id.textView39);
-                    // final TextView bill88 = (TextView) findViewById(R.id.textView37);
-                    //final TextView bill89 = (TextView) findViewById(R.id.textView28);
 
                     etText83 = (TextView) findViewById(R.id.textView14);
                     etText84 = (TextView) findViewById(R.id.textView20);
-                    // etText85 = (TextView) findViewById(R.id.textView43);
                     etText86 = (TextView) findViewById(R.id.textView24);
 
 
 
 
-                    //a
-                    bill1.setText(0 + "");
-                    bill2.setText(0.5 + "");
-                    bill3.setText(0.8 + "");
-                    bill4.setText(1 + "");
-                    bill5.setText(2 + "");
-                    bill6.setText(3 + "");
-                    bill7.setText(5 + "");
-                    bill8.setText(10 + "");
-                    bill9.setText(15 + "");
-                    bill10.setText(20 + "");
-                    bill11.setText(30 + "");
+                                            bill1.setText(0 + "");
+                                            bill2.setText(0.5 + "");
+                                            bill3.setText(0.8 + "");
+                                            bill4.setText(1 + "");
+                                            bill5.setText(2 + "");
+                                            bill6.setText(3 + "");
+                                            bill7.setText(5 + "");
+                                            bill8.setText(10 + "");
+                                            bill9.setText(15 + "");
+                                            bill10.setText(20 + "");
+                                            bill11.setText(30 + "");
 
+                                            bill12.setText(0.0 + "");
+                                            bill13.setText(0.0 + "");
 
-                    //b
-                    bill23.setText(0 + "");
-                    bill24.setText(0.5 + "");
-                    bill25.setText(0.8 + "");
-                    bill26.setText(1 + "");
-                    bill27.setText(2 + "");
-                    bill28.setText(3 + "");
-                    bill29.setText(5 + "");
-                    bill30.setText(10 + "");
-                    bill31.setText(15 + "");
-                    bill32.setText(20 + "");
-                    bill33.setText(30 + "");
+                                            bill23.setText(0 + "");
+                                            bill24.setText(0.5 + "");
+                                            bill25.setText(0.8 + "");
+                                            bill26.setText(1 + "");
+                                            bill27.setText(2 + "");
+                                            bill28.setText(3 + "");
+                                            bill29.setText(5 + "");
+                                            bill30.setText(10 + "");
+                                            bill31.setText(15 + "");
+                                            bill32.setText(20 + "");
+                                            bill33.setText(30 + "");
 
+                                            bill40.setText(2 + "");
+                                            bill41.setText(2.5 + "");
+                                            bill42.setText(3 + "");
+                                            bill43.setText(5 + "");
+                                            bill44.setText(12 + "");
+                                            bill45.setText(16 + "");
 
+                                            bill46.setText(2 + "");
+                                            bill47.setText(2.5 + "");
+                                            bill48.setText(3 + "");
+                                            bill49.setText(3.2 + "");
+                                            bill50.setText(3.5 + "");
+                                            bill51.setText(3.8 + "");
 
-                    bill40.setText(0 + "");
-                    bill41.setText(10 + "");
-                    bill42.setText(12 + "");
-                    bill43.setText(15 + "");
-                    bill44.setText(18 + "");
-                    bill45.setText(20 + "");
+                                            bill52.setText(10 + "");
+                                            bill53.setText(20 + "");
+                                            bill54.setText(30 + "");
+                                            bill55.setText(40 + "");
+                                            bill73.setText(50 + "");
+                                            bill74.setText(100 + "");
 
-                    bill46.setText(0 + "");
-                    bill47.setText(1000 + "");
-                    bill48.setText(1100 + "");
-                    bill49.setText(1150 + "");
-                    bill50.setText(1200 + "");
-                    bill51.setText(1400 + "");
+                                            bill60.setText(1 + "");
+                                            bill61.setText(2 + "");
+                                            bill62.setText(7 + "");
+                                            bill63.setText(14 + "");
+                                            bill64.setText(21 + "");
+                                            bill65.setText(30 + "");
 
+                                            bill66.setText(0.90 + "");
+                                            bill67.setText(1.00 + "");
+                                            bill68.setText(1.10 + "");
 
-                    bill52.setText(248 + "");
-                    bill53.setText(249 + "");
-                    bill54.setText(250 + "");
-                    bill55.setText(260 + "");
-                    bill73.setText(270 + "");
-                    bill74.setText(275 + "");
+                                            bill79.setText(1 + "");
+                                            bill80.setText(2 + "");
+                                            bill81.setText(2.2 + "");
+                                            bill82.setText(2.5 + "");
 
+                                            bill83.setText(00.00 + "");
+                                            bill84.setText(00.00 + "");
+                                            bill86.setText(00.00 + "");
 
-
-                    bill60.setText(115 + "");
-                    bill61.setText(117 + "");
-                    bill62.setText(120 + "");
-                    bill63.setText(125 + "");
-                    bill64.setText(126 + "");
-                    bill65.setText(130 + "");
-
-                    bill66.setText(40 + "");
-                    bill67.setText(65 + "");
-                    bill68.setText(75 + "");
-
-                    //bill69.setText(1 + "");
-                    // bill72.setText(2 + "");
-                    // bill70.setText(3 + "");
-
-
-
-
-
-
-                    bill79.setText(9 + "");
-                    bill80.setText(10 + "");
-                    bill81.setText(11 + "");
-                    bill82.setText(12 + "");
-
-                    bill83.setText(00.00 + "");
-                    bill84.setText(00.00 + "");
-                    //bill85.setText(00.00 + "");
-                    bill86.setText(00.00 + "");
-
-                    //bill89.setText(00.00 + "");
 
 
 
@@ -3919,6 +3776,7 @@ public class MainActivity extends AppCompatActivity {
 
 
                 switch (v.getId()) {
+
 
                     //region секция 1.1 (case R.id.button10:)
                     case R.id.button10:
@@ -3942,10 +3800,10 @@ public class MainActivity extends AppCompatActivity {
                         float num002 = Float.parseFloat(aetText2.getText().toString());
                         float w2 = (float) num002;
                         textView002.setText(String.format(Locale.US, "%.2f", w2) + "");
-                         Animation anim2 = AnimationUtils.loadAnimation(
-                                 getApplicationContext(), R.anim.sms_anim);
-                          final Button button2 = (Button) findViewById(R.id.button2);
-                          button2.startAnimation(anim2);
+                        Animation anim2 = AnimationUtils.loadAnimation(
+                                getApplicationContext(), R.anim.sms_anim);
+                        final Button button2 = (Button) findViewById(R.id.button2);
+                        button2.startAnimation(anim2);
 
                         break;
 
@@ -3955,10 +3813,10 @@ public class MainActivity extends AppCompatActivity {
                         float num003 = Float.parseFloat(aetText3.getText().toString());
                         float w3 = (float) num003;
                         textView003.setText(String.format(Locale.US, "%.2f", w3) + "");
-                         Animation anim3 = AnimationUtils.loadAnimation(
-                                  getApplicationContext(), R.anim.sms_anim);
-                          final Button button3 = (Button) findViewById(R.id.button);
-                           button3.startAnimation(anim3);
+                        Animation anim3 = AnimationUtils.loadAnimation(
+                                getApplicationContext(), R.anim.sms_anim);
+                        final Button button3 = (Button) findViewById(R.id.button);
+                        button3.startAnimation(anim3);
 
 
                         break;
@@ -3970,10 +3828,10 @@ public class MainActivity extends AppCompatActivity {
                         float num004 = Float.parseFloat(aetText4.getText().toString());
                         float w4 = (float) num004;
                         textView004.setText(String.format(Locale.US, "%.2f", w4) + "");
-                          Animation anim4 = AnimationUtils.loadAnimation(
-                                   getApplicationContext(), R.anim.sms_anim);
-                           final Button button4 = (Button) findViewById(R.id.button3);
-                           button4.startAnimation(anim4);
+                        Animation anim4 = AnimationUtils.loadAnimation(
+                                getApplicationContext(), R.anim.sms_anim);
+                        final Button button4 = (Button) findViewById(R.id.button3);
+                        button4.startAnimation(anim4);
 
                         break;
 
@@ -3986,9 +3844,9 @@ public class MainActivity extends AppCompatActivity {
                         textView005.setText(String.format(Locale.US, "%.2f", w5) + "");
 
                         Animation anim5 = AnimationUtils.loadAnimation(
-                                  getApplicationContext(), R.anim.sms_anim);
-                          final Button button5 = (Button) findViewById(R.id.button5);
-                           button5.startAnimation(anim5);
+                                getApplicationContext(), R.anim.sms_anim);
+                        final Button button5 = (Button) findViewById(R.id.button5);
+                        button5.startAnimation(anim5);
 
                         break;
 
@@ -3999,10 +3857,10 @@ public class MainActivity extends AppCompatActivity {
                         float num006 = Float.parseFloat(aetText6.getText().toString());
                         float w6 = (float) num006;
                         textView006.setText(String.format(Locale.US, "%.2f", w6) + "");
-                         Animation anim6 = AnimationUtils.loadAnimation(
-                                 getApplicationContext(), R.anim.sms_anim);
-                          final Button button6 = (Button) findViewById(R.id.button6);
-                          button6.startAnimation(anim6);
+                        Animation anim6 = AnimationUtils.loadAnimation(
+                                getApplicationContext(), R.anim.sms_anim);
+                        final Button button6 = (Button) findViewById(R.id.button6);
+                        button6.startAnimation(anim6);
                         break;
 
 
@@ -4013,9 +3871,9 @@ public class MainActivity extends AppCompatActivity {
                         float w7 = (float) num007;
                         textView007.setText(String.format(Locale.US, "%.2f", w7) + "");
                         Animation anim7 = AnimationUtils.loadAnimation(
-                                 getApplicationContext(), R.anim.sms_anim);
-                          final Button button7 = (Button) findViewById(R.id.button7);
-                           button7.startAnimation(anim7);
+                                getApplicationContext(), R.anim.sms_anim);
+                        final Button button7 = (Button) findViewById(R.id.button7);
+                        button7.startAnimation(anim7);
                         break;
 
 
@@ -4025,10 +3883,10 @@ public class MainActivity extends AppCompatActivity {
                         float num008 = Float.parseFloat(aetText8.getText().toString());
                         float w8 = (float) num008;
                         textView008.setText(String.format(Locale.US, "%.2f", w8) + "");
-                          Animation anim8 = AnimationUtils.loadAnimation(
-                                   getApplicationContext(), R.anim.sms_anim);
-                          final Button button8 = (Button) findViewById(R.id.button38);
-                           button8.startAnimation(anim8);
+                        Animation anim8 = AnimationUtils.loadAnimation(
+                                getApplicationContext(), R.anim.sms_anim);
+                        final Button button8 = (Button) findViewById(R.id.button38);
+                        button8.startAnimation(anim8);
                         break;
 
 
@@ -4038,10 +3896,10 @@ public class MainActivity extends AppCompatActivity {
                         float num009 = Float.parseFloat(aetText9.getText().toString());
                         float w9 = (float) num009;
                         textView009.setText(String.format(Locale.US, "%.2f", w9) + "");
-                         Animation anim9 = AnimationUtils.loadAnimation(
-                                 getApplicationContext(), R.anim.sms_anim);
-                         final Button button9 = (Button) findViewById(R.id.button40);
-                          button9.startAnimation(anim9);
+                        Animation anim9 = AnimationUtils.loadAnimation(
+                                getApplicationContext(), R.anim.sms_anim);
+                        final Button button9 = (Button) findViewById(R.id.button40);
+                        button9.startAnimation(anim9);
                         break;
 
 
@@ -4051,10 +3909,10 @@ public class MainActivity extends AppCompatActivity {
                         float num010 = Float.parseFloat(aetText10.getText().toString());
                         float w10 = (float) num010;
                         textView010.setText(String.format(Locale.US, "%.2f", w10) + "");
-                          Animation anim10 = AnimationUtils.loadAnimation(
-                                   getApplicationContext(), R.anim.sms_anim);
-                           final Button button10 = (Button) findViewById(R.id.button39);
-                           button10.startAnimation(anim10);
+                        Animation anim10 = AnimationUtils.loadAnimation(
+                                getApplicationContext(), R.anim.sms_anim);
+                        final Button button10 = (Button) findViewById(R.id.button39);
+                        button10.startAnimation(anim10);
                         break;
 
                     case R.id.button8:
@@ -4063,10 +3921,10 @@ public class MainActivity extends AppCompatActivity {
                         float num011 = Float.parseFloat(aetText11.getText().toString());
                         float w11 = (float) num011;
                         textView011.setText(String.format(Locale.US, "%.2f", w11) + "");
-                          Animation anim11 = AnimationUtils.loadAnimation(
-                                   getApplicationContext(), R.anim.sms_anim);
-                           final Button button11 = (Button) findViewById(R.id.button8);
-                            button11.startAnimation(anim11);
+                        Animation anim11 = AnimationUtils.loadAnimation(
+                                getApplicationContext(), R.anim.sms_anim);
+                        final Button button11 = (Button) findViewById(R.id.button8);
+                        button11.startAnimation(anim11);
                         break;
 
                     //endregion
@@ -4701,122 +4559,26 @@ public class MainActivity extends AppCompatActivity {
                     //endregion
 
                     //region секция 11.1
-                    case R.id.button41:
-                        TextView textView069 = (TextView) findViewById(R.id.textViewWir11);
-                        TextView textView0690 = (TextView) findViewById(R.id.textView9);
-                        aetText69 = (Button) findViewById(R.id.button41);
-                        float num069 = Float.parseFloat(aetText69.getText().toString());
-                        float w69 = (float) num069;
-                        textView069.setText(String.format(Locale.US, "%.0f", w69) + "");
-                        textView069.setText(String.format(Locale.US, "%.0f", w69) + "");
-                        textView0690.setText("На ребро в один ряд");
-                        imageView.setImageResource(R.drawable.odin_narebro);
-
-                        Animation anim48 = AnimationUtils.loadAnimation(
-                                getApplicationContext(), R.anim.sms_anim);
-                        final Button button48 = (Button) findViewById(R.id.button41);
-                        button48.startAnimation(anim48);
-                        break;
-
-                    case R.id.button42:
+                    case R.id.imageView23:
+                        ImageView imageView1 = (ImageView) findViewById(R.id.imageView3);
                         TextView textView070 = (TextView) findViewById(R.id.textViewWir11);
-                        TextView textView0700 = (TextView) findViewById(R.id.textView9);
-                        aetText70 = (Button) findViewById(R.id.button42);
-                        float num070 = Float.parseFloat(aetText70.getText().toString());
-                        float w70 = (float) num070;
-                        textView070.setText(String.format(Locale.US, "%.0f", w70) + "");
-                        textView0700.setText("На ребро в два ряда");
-                        imageView.setImageResource(R.drawable.vdvanarebro);
-
-                        Animation anim49 = AnimationUtils.loadAnimation(
-                                getApplicationContext(), R.anim.sms_anim);
-                        final Button button49 = (Button) findViewById(R.id.button42);
-                        button49.startAnimation(anim49);
+                        textView070.setText("1");
+                        imageView1.setImageResource(R.drawable.tip_l1);
                         break;
 
-                    case R.id.button43:
-                        TextView textView071 = (TextView) findViewById(R.id.textViewWir11);
-                        TextView textView0710 = (TextView) findViewById(R.id.textView9);
-                        aetText71 = (Button) findViewById(R.id.button43);
-                        float num071 = Float.parseFloat(aetText71.getText().toString());
-                        float w71 = (float) num071;
-                        textView071.setText(String.format(Locale.US, "%.0f", w71) + "");
-                        textView0710.setText("В пол кирпича");
-                        imageView.setImageResource(R.drawable.pol_kirp);
+                    case R.id.imageView31:
 
-                        Animation anim50 = AnimationUtils.loadAnimation(
-                                getApplicationContext(), R.anim.sms_anim);
-                        final Button button50 = (Button) findViewById(R.id.button43);
-                        button50.startAnimation(anim50);
+                        ImageView imageView2 = (ImageView) findViewById(R.id.imageView3);
+                        TextView textView0701 = (TextView) findViewById(R.id.textViewWir11);
+                        textView0701.setText("2");
+                        imageView2.setImageResource(R.drawable.tip_l2);
                         break;
 
-                    case R.id.button44:
-                        TextView textView072 = (TextView) findViewById(R.id.textViewWir11);
-                        TextView textView0720 = (TextView) findViewById(R.id.textView9);
-                        aetText72 = (Button) findViewById(R.id.button44);
-                        float num072 = Float.parseFloat(aetText72.getText().toString());
-                        float w72 = (float) num072;
-                        textView072.setText(String.format(Locale.US, "%.0f", w72) + "");
-                        textView0720.setText("В полтора кирпича");
-                        imageView.setImageResource(R.drawable.poltora);
-
-                        Animation anim51 = AnimationUtils.loadAnimation(
-                                getApplicationContext(), R.anim.sms_anim);
-                        final Button button51 = (Button) findViewById(R.id.button44);
-                        button51.startAnimation(anim51);
-                        break;
-
-
-
-
-
-
-                    case R.id.button450:
-                        TextView textView073 = (TextView) findViewById(R.id.textViewWir11);
-                        TextView textView0730 = (TextView) findViewById(R.id.textView9);
-                        aetText73 = (Button) findViewById(R.id.button450);
-                        float num073 = Float.parseFloat(aetText73.getText().toString());
-                        float w73 = (float) num073;
-                        textView073.setText(String.format(Locale.US, "%.0f", w73) + "");
-                        textView0730.setText("В полтора (сплошной)");
-                        imageView.setImageResource(R.drawable.poltora_sploshna);
-
-                        Animation anim52 = AnimationUtils.loadAnimation(
-                                getApplicationContext(), R.anim.sms_anim);
-                        final Button button52 = (Button) findViewById(R.id.button450);
-                        button52.startAnimation(anim52);
-                        break;
-
-                    case R.id.button460:
-                        TextView textView074 = (TextView) findViewById(R.id.textViewWir11);
-                        TextView textView0740 = (TextView) findViewById(R.id.textView9);
-                        aetText74 = (Button) findViewById(R.id.button460);
-                        float num074 = Float.parseFloat(aetText74.getText().toString());
-                        float w74 = (float) num074;
-                        textView074.setText(String.format(Locale.US, "%.0f", w74) + "");
-                        textView0740.setText("В кирпич");
-                        imageView.setImageResource(R.drawable.vkirpish);
-
-                        Animation anim53 = AnimationUtils.loadAnimation(
-                                getApplicationContext(), R.anim.sms_anim);
-                        final Button button53 = (Button) findViewById(R.id.button460);
-                        button53.startAnimation(anim53);
-                        break;
-
-                    case R.id.button461:
-                        TextView textView0751 = (TextView) findViewById(R.id.textViewWir11);
-                        TextView textView0752 = (TextView) findViewById(R.id.textView9);
-                        Button aetText75 = (Button) findViewById(R.id.button461);
-                        float num0751 = Float.parseFloat(aetText75.getText().toString());
-                        float w75 = (float) num0751;
-                        textView0751.setText(String.format(Locale.US, "%.0f", w75) + "");
-                        textView0752.setText("В два кирпича");
-                        imageView.setImageResource(R.drawable.vdvakirpisha);
-
-                        Animation anim54 = AnimationUtils.loadAnimation(
-                                getApplicationContext(), R.anim.sms_anim);
-                        final Button button54 = (Button) findViewById(R.id.button461);
-                        button54.startAnimation(anim54);
+                    case R.id.imageView4:
+                        ImageView imageView3 = (ImageView) findViewById(R.id.imageView3);
+                        TextView textView0702 = (TextView) findViewById(R.id.textViewWir11);
+                        textView0702.setText("3");
+                        imageView3.setImageResource(R.drawable.tip_l3);
                         break;
 
                     /*case R.id.button36:
@@ -4847,7 +4609,7 @@ public class MainActivity extends AppCompatActivity {
                         aetText79 = (Button) findViewById(R.id.button26);
                         float num079 = Float.parseFloat(aetText79.getText().toString());
                         float w79 = (float) num079;
-                        textView079.setText(String.format(Locale.US, "%.0f", w79) + "");
+                        textView079.setText(String.format(Locale.US, "%.2f", w79) + "");
 
                         Animation anim55 = AnimationUtils.loadAnimation(
                                 getApplicationContext(), R.anim.sms_anim);
@@ -4861,7 +4623,7 @@ public class MainActivity extends AppCompatActivity {
                         aetText80 = (Button) findViewById(R.id.button33);
                         float num080 = Float.parseFloat(aetText80.getText().toString());
                         float w80 = (float) num080;
-                        textView080.setText(String.format(Locale.US, "%.0f", w80) + "");
+                        textView080.setText(String.format(Locale.US, "%.2f", w80) + "");
 
                         Animation anim56 = AnimationUtils.loadAnimation(
                                 getApplicationContext(), R.anim.sms_anim);
@@ -4874,7 +4636,7 @@ public class MainActivity extends AppCompatActivity {
                         aetText81 = (Button) findViewById(R.id.button34);
                         float num081 = Float.parseFloat(aetText81.getText().toString());
                         float w81 = (float) num081;
-                        textView081.setText(String.format(Locale.US, "%.0f", w81) + "");
+                        textView081.setText(String.format(Locale.US, "%.2f", w81) + "");
 
                         Animation anim57 = AnimationUtils.loadAnimation(
                                 getApplicationContext(), R.anim.sms_anim);
@@ -4887,7 +4649,7 @@ public class MainActivity extends AppCompatActivity {
                         aetText82 = (Button) findViewById(R.id.button35);
                         float num082 = Float.parseFloat(aetText82.getText().toString());
                         float w82 = (float) num082;
-                        textView082.setText(String.format(Locale.US, "%.0f", w82) + "");
+                        textView082.setText(String.format(Locale.US, "%.2f", w82) + "");
                         //imageView.setImageResource(R.drawable.rad8);
 
                         Animation anim58 = AnimationUtils.loadAnimation(
@@ -4907,8 +4669,8 @@ public class MainActivity extends AppCompatActivity {
                     //&&&&&&
 
                     default:
-                }}
-            }
+                }
+            }}
         };
 
         //region секция (btn1.setOnClickListener(btnClk);)
@@ -4977,13 +4739,13 @@ public class MainActivity extends AppCompatActivity {
         btn70.setOnClickListener(btnClk);
         btn71.setOnClickListener(btnClk);
 
-        btn72.setOnClickListener(btnClk);
+//        btn72.setOnClickListener(btnClk);
 
 
-        btn73.setOnClickListener(btnClk);
-        btn74.setOnClickListener(btnClk);
+//        btn73.setOnClickListener(btnClk);
+//        btn74.setOnClickListener(btnClk);
 
-        btn75.setOnClickListener(btnClk);
+//        btn75.setOnClickListener(btnClk);
         // btn76.setOnClickListener(btnClk);
 
 
@@ -4993,14 +4755,15 @@ public class MainActivity extends AppCompatActivity {
         btn80.setOnClickListener(btnClk);
         btn81.setOnClickListener(btnClk);
         btn82.setOnClickListener(btnClk);
-        
+
+
         btn83.setOnClickListener(btnClk);
         btn84.setOnClickListener(btnClk);
 
 
 
         //Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-       // setSupportActionBar(toolbar);
+        // setSupportActionBar(toolbar);
 
 
 
@@ -5011,7 +4774,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                long mills = 42L;
+                long mills = 15L;
                 Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
                 vibrator.vibrate(mills);
 
@@ -5079,278 +4842,114 @@ public class MainActivity extends AppCompatActivity {
 
                 //количество необходимого кирпича
 
-                float s3 = (num001*num003);
-                if (Float.parseFloat(aetText5.getText().toString()) > s3)
-                { Toast toast = Toast.makeText(getApplicationContext(),
-                        "Ошибка!: Проемы не могут быть больше площади стены", Toast.LENGTH_LONG);
 
-                    toast.show();}
-                else {
+                    if (Float.parseFloat(aetText11.getText().toString()) == 1)
+                    {
+                        float t = num005/num012;
+                        int result = Math.round(t);
+                        float okruglenie_kolishestva_vert_radov = result;
+
+                        float L_dlini = (float) (num001+0.5+(num010*2));
+                        float stoek_po_dline = (L_dlini/num006)+1;
+                        double okrug = Math.ceil(stoek_po_dline);
+                        float okrug_dve_dlini_stoek = (float) (okrug*2);
+
+                        float L_wirini = (float) (num003+0.5);
+                        float stoek_po_wirine = (L_wirini/num006)+1;
+                        double okrug_wir = Math.ceil(stoek_po_wirine);
+                        float okrug_dve_wir_stoek = (float) (okrug_wir*2);
+
+                        float Vsego_Stoek_v_yaruse = okrug_dve_dlini_stoek+okrug_dve_wir_stoek;
+                        float Vsego_Stoek = Vsego_Stoek_v_yaruse*result;
+                        float Cena_orendi_za_den = num007*Vsego_Stoek;
+                        float Cena_orendi_za_ves_srok = Cena_orendi_za_den*num009;
+
+                        TextView textView142 = (TextView) findViewById(R.id.textView14);
+                        TextView textView1420 = (TextView) findViewById(R.id.textView142);
+                        TextView textView1421 = (TextView) findViewById(R.id.textView242);
+                        TextView textView144 = (TextView) findViewById(R.id.textView20);
+                        TextView textViewV = (TextView) findViewById(R.id.textView24);
+                        textView142.setText(String.format(Locale.US, "%.0f", Vsego_Stoek) + "");
+                        textView1420.setText(String.format(Locale.US, "%.0f", okruglenie_kolishestva_vert_radov) + "");
+                        textView1421.setText(String.format(Locale.US, "%.2f", Cena_orendi_za_ves_srok) + "");
+                        textView144.setText(String.format(Locale.US, "%.2f", t) + "");
+                        textViewV.setText(String.format(Locale.US, "%.0f", Vsego_Stoek_v_yaruse) + "");
+                    }
+
+                    else if (Float.parseFloat(aetText11.getText().toString()) == 2)
+                    {
+
+                        float t = num005/num012;
+                        int result = Math.round(t);
+                        float okruglenie_kolishestva_vert_radov = result;
+
+                        float L_dlini = (float) (num001+0.25+num010);
+                        float stoek_po_dline = (L_dlini/num006)+1;
+                        double okrug = Math.ceil(stoek_po_dline);
+                        float okrug_dve_dlini_stoek = (float) (okrug*1);
+
+                        float L_wirini = (float) (num003+0.25);
+                        float stoek_po_wirine = (L_wirini/num006)+1;
+                        double okrug_wir = Math.ceil(stoek_po_wirine);
+                        float okrug_dve_wir_stoek = (float) (okrug_wir*1);
+
+                        float Vsego_Stoek_v_yaruse = okrug_dve_dlini_stoek+okrug_dve_wir_stoek;
+                        float Vsego_Stoek = Vsego_Stoek_v_yaruse*result;
+                        float Cena_orendi_za_den = num007*Vsego_Stoek;
+                        float Cena_orendi_za_ves_srok = Cena_orendi_za_den*num009;
+
+                        TextView textView142 = (TextView) findViewById(R.id.textView14);
+                        TextView textView1420 = (TextView) findViewById(R.id.textView142);
+                        TextView textView1421 = (TextView) findViewById(R.id.textView242);
+                        TextView textView144 = (TextView) findViewById(R.id.textView20);
+                        TextView textViewV = (TextView) findViewById(R.id.textView24);
+                        textView142.setText(String.format(Locale.US, "%.0f", Vsego_Stoek) + "");
+                        textView1420.setText(String.format(Locale.US, "%.0f", okruglenie_kolishestva_vert_radov) + "");
+                        textView1421.setText(String.format(Locale.US, "%.2f", Cena_orendi_za_ves_srok) + "");
+                        textView144.setText(String.format(Locale.US, "%.2f", t) + "");
+                        textViewV.setText(String.format(Locale.US, "%.0f", Vsego_Stoek_v_yaruse) + "");
+                    }
+                    else if (Float.parseFloat(aetText11.getText().toString()) == 3)
+                    {
 
 
-                if (Float.parseFloat(aetText11.getText().toString()) == 1)
-                {
+                        float t = num005/num012;
+                        int result = Math.round(t);
+                        float okruglenie_kolishestva_vert_radov = result;
 
-                    float x1 = num007;
-                    float x2 = num009;
+                        float L_dlini = num001;
+                        float stoek_po_dline = (L_dlini/num006)+1;
+                        double okrug = Math.ceil(stoek_po_dline);
+                        float okrug_dve_dlini_stoek = (float) (okrug*1);
 
-                    float a_kirp =  (1000/(x1+(num012)));
-                    float b_kirp =  (1000/(x2+(num012)));
-                    float s1m = (a_kirp)*(b_kirp);
+                        //float L_wirini = (float) (num003+0.5);
+                       // float stoek_po_wirine = (L_wirini/num006)+1;
+                       // double okrug_wir = Math.ceil(stoek_po_wirine);
+                       // float okrug_dve_wir_stoek = (float) (okrug_wir*2);
 
-                    float w = (((num001*num003)- num005) *(s1m));
-                    TextView textView142 = (TextView) findViewById(R.id.textView14);
-                    textView142.setText(String.format(Locale.US, "%.1f", w) + "");
-                    // цена кирпича
-                    float t = (float) (w*(num006)*0.001);
-                    TextView textView144 = (TextView) findViewById(R.id.textView20);
-                    textView144.setText(String.format(Locale.US, "%.2f", t) + "");
+                        float Vsego_Stoek_v_yaruse = okrug_dve_dlini_stoek;
+                        float Vsego_Stoek = Vsego_Stoek_v_yaruse*result;
+                        float Cena_orendi_za_den = num007*Vsego_Stoek;
+                        float Cena_orendi_za_ves_srok = Cena_orendi_za_den*num009;
 
-                    // объем раствора
-                    float k1 = (num007+num012);
+                        TextView textView142 = (TextView) findViewById(R.id.textView14);
+                        TextView textView1420 = (TextView) findViewById(R.id.textView142);
+                        TextView textView1421 = (TextView) findViewById(R.id.textView242);
+                        TextView textView144 = (TextView) findViewById(R.id.textView20);
+                        TextView textViewV = (TextView) findViewById(R.id.textView24);
+                        textView142.setText(String.format(Locale.US, "%.0f", Vsego_Stoek) + "");
+                        textView1420.setText(String.format(Locale.US, "%.0f", okruglenie_kolishestva_vert_radov) + "");
+                        textView1421.setText(String.format(Locale.US, "%.2f", Cena_orendi_za_ves_srok) + "");
+                        textView144.setText(String.format(Locale.US, "%.2f", t) + "");
+                        textViewV.setText(String.format(Locale.US, "%.0f", Vsego_Stoek_v_yaruse) + "");
+                    }
 
-                    //j1- количество вертикальных полос в метре (3.84) если 250
-                    float j1 = (float) ((1)/(k1*0.001));
 
-                    //Vv1 - обем раствора в этих полосах
-                    float Vv1 = (float) (((num012*0.001)*1*(num010*0.001)*j1));
 
-                    float k2 = (num009+num012);
-
-                    //j2- количество горизонтальных полос в метре (8,3) если 120
-                    float j2 = (float) ((1)/(k2*0.001));
-                    float Vv2 = (float) (((num012*0.001)*1*(num010*0.001)*j2));
-
-                    float Vv = (float) ((Vv1+Vv2)*num001*num003);
-
-                    TextView textViewV = (TextView) findViewById(R.id.textView24);
-                    textViewV.setText(String.format(Locale.US, "%.3f", Vv) + "");
+                    //Snackbar.make(view, "Подсчитано", Snackbar.LENGTH_SHORT)
+                    //Snackbar.make(view, "Подсчитано", Snackbar.LENGTH_SHORT)
+                    // .setAction("Action", null).show();
                 }
-
-                else if (Float.parseFloat(aetText11.getText().toString()) == 2)
-                {
-                    float x1 = num007;
-                    float x2 = num009;
-
-                    float a_kirp =  (1000/(x1+(num012)));
-                    float b_kirp =  (1000/(x2+(num012)));
-                    float s1m = (a_kirp)*(b_kirp);
-
-                    float w = (((num001*num003)- num005) *(s1m)*2);
-                    TextView textView142 = (TextView) findViewById(R.id.textView14);
-                    textView142.setText(String.format(Locale.US, "%.1f", w) + "");
-
-                    // цена кирпича
-                    float t = (float) (w*(num006)*0.001);
-                    TextView textView144 = (TextView) findViewById(R.id.textView20);
-                    textView144.setText(String.format(Locale.US, "%.2f", t) + "");
-
-                    // объем раствора
-                    float k1 = (num007+num012);
-
-                    //j1- количество вертикальных полос в метре (3.84) если 250
-                    float j1 = (float) ((1)/(k1*0.001));
-
-                    //Vv1 - обем раствора в этих полосах
-                    float Vv1 = (float) (((num012*0.001)*1*(num010*0.001)*j1));
-
-                    float k2 = (num009+num012);
-
-                    //j2- количество горизонтальных полос в метре (8,3) если 120
-                    float j2 = (float) ((1)/(k2*0.001));
-                    float Vv2 = (float) (((num012*0.001)*1*(num010*0.001)*j2));
-
-                    float Vv = (float) ((Vv1+Vv2)*num001*num003*2);
-
-                    TextView textViewV = (TextView) findViewById(R.id.textView24);
-                    textViewV.setText(String.format(Locale.US, "%.3f", Vv) + "");
-                }
-                else if (Float.parseFloat(aetText11.getText().toString()) == 3)
-                {
-                    float x1 = num007;
-                    float x2 = num010;
-
-                    float a_kirp =  (1000/(x1+(num012)));
-                    float b_kirp =  (1000/(x2+(num012)));
-                    float s1m = (a_kirp)*(b_kirp);
-
-                    float w = (((num001*num003)- num005) *(s1m));
-                    TextView textView142 = (TextView) findViewById(R.id.textView14);
-                    textView142.setText(String.format(Locale.US, "%.1f", w) + "");
-
-                    // цена кирпича
-                    float t = (float) (w*(num006)*0.001);
-                    TextView textView144 = (TextView) findViewById(R.id.textView20);
-                    textView144.setText(String.format(Locale.US, "%.2f", t) + "");
-
-                    // объем раствора
-                    float k1 = (num007+num012);
-
-                    //j1- количество вертикальных полос в метре (3.84) если 250
-                    float j1 = (float) ((1)/(k1*0.001));
-
-                    //Vv1 - обем раствора в этих полосах
-                    float Vv1 = (float) (((num012*0.001)*1*(num009*0.001)*j1));
-
-                    float k2 = (num010+num012);
-                    float j2 = (float) ((1)/(k2*0.001));
-                    float Vv2 = (float) (((num012*0.001)*1*(num009*0.001)*j2));
-
-                    float Vv = (float) ((Vv1+Vv2)*num001*num003);
-
-                    TextView textViewV = (TextView) findViewById(R.id.textView24);
-                    textViewV.setText(String.format(Locale.US, "%.3f", Vv) + "");
-                }
-                else if (Float.parseFloat(aetText11.getText().toString()) == 4)
-                {
-                    float x1 = num007;
-                    float x2 = num010;
-
-                    float a_kirp =  (1000/(x1+(num012)));
-                    float b_kirp =  (1000/(x2+(num012)));
-                    float s1m = (a_kirp)*(b_kirp);
-
-                    float w = (((num001*num003)- num005) *(s1m)*2);
-                    TextView textView142 = (TextView) findViewById(R.id.textView14);
-                    textView142.setText(String.format(Locale.US, "%.1f", w) + "");
-
-                    // цена кирпича
-                    float t = (float) (w*(num006)*0.001);
-                    TextView textView144 = (TextView) findViewById(R.id.textView20);
-                    textView144.setText(String.format(Locale.US, "%.2f", t) + "");
-
-                    // объем раствора
-                    float k1 = (num007+num012);
-
-                    //j1- количество вертикальных полос в метре (3.84) если 250
-                    float j1 = (float) ((1)/(k1*0.001));
-
-                    //Vv1 - обем раствора в этих полосах
-                    float Vv1 = (float) (((num012*0.001)*1*(num009*0.001)*j1));
-
-                    float k2 = (num010+num012);
-                    float j2 = (float) ((1)/(k2*0.001));
-                    float Vv2 = (float) (((num012*0.001)*1*(num009*0.001)*j2));
-
-                    float Vv = (float) ((Vv1+Vv2)*num001*num003*2);
-
-                    TextView textViewV = (TextView) findViewById(R.id.textView24);
-                    textViewV.setText(String.format(Locale.US, "%.3f", Vv) + "");
-                }
-                else if (Float.parseFloat(aetText11.getText().toString()) == 5)
-                {
-                    float x1 = num007;
-                    float x2 = num010;
-
-                    float a_kirp =  (1000/(x1+(num012)));
-                    float b_kirp =  (1000/(x2+(num012)));
-                    float s1m = (a_kirp)*(b_kirp);
-
-                    float w = (((num001*num003)- num005) *(s1m)*3);
-                    TextView textView142 = (TextView) findViewById(R.id.textView14);
-                    textView142.setText(String.format(Locale.US, "%.1f", w) + "");
-
-                    // цена кирпича
-                    float t = (float) (w*(num006)*0.001);
-                    TextView textView144 = (TextView) findViewById(R.id.textView20);
-                    textView144.setText(String.format(Locale.US, "%.2f", t) + "");
-
-                    // объем раствора
-                    float k1 = (num007+num012);
-
-                    //j1- количество вертикальных полос в метре (3.84) если 250
-                    float j1 = (float) ((1)/(k1*0.001));
-
-                    //Vv1 - обем раствора в этих полосах
-                    float Vv1 = (float) (((num012*0.001)*1*(num009*0.001)*j1));
-
-                    float k2 = (num010+num012);
-                    float j2 = (float) ((1)/(k2*0.001));
-                    float Vv2 = (float) (((num012*0.001)*1*(num009*0.001)*j2));
-
-                    float Vv = (float) ((Vv1+Vv2)*num001*num003*3);
-
-                    TextView textViewV = (TextView) findViewById(R.id.textView24);
-                    textViewV.setText(String.format(Locale.US, "%.3f", Vv) + "");
-                }
-                else if (Float.parseFloat(aetText11.getText().toString()) == 6)
-                {
-                    float x1 = num007;
-                    float x2 = num010;
-
-                    float a_kirp =  (1000/(x1+(num012)));
-                    float b_kirp =  (1000/(x2+(num012)));
-                    float s1m = (a_kirp)*(b_kirp);
-
-                    float w = (((num001*num003)- num005) *(s1m)*2);
-                    TextView textView142 = (TextView) findViewById(R.id.textView14);
-                    textView142.setText(String.format(Locale.US, "%.1f", w) + "");
-
-                    // цена кирпича
-                    float t = (float) (w*(num006)*0.001);
-                    TextView textView144 = (TextView) findViewById(R.id.textView20);
-                    textView144.setText(String.format(Locale.US, "%.2f", t) + "");
-
-                    // объем раствора
-                    float k1 = (num007+num012);
-
-                    //j1- количество вертикальных полос в метре (3.84) если 250
-                    float j1 = (float) ((1)/(k1*0.001));
-
-                    //Vv1 - обем раствора в этих полосах
-                    float Vv1 = (float) (((num012*0.001)*1*(num009*0.001)*j1));
-
-                    float k2 = (num010+num012);
-                    float j2 = (float) ((1)/(k2*0.001));
-                    float Vv2 = (float) (((num012*0.001)*1*(num009*0.001)*j2));
-
-                    float Vv = (float) ((Vv1+Vv2)*num001*num003*2);
-
-                    TextView textViewV = (TextView) findViewById(R.id.textView24);
-                    textViewV.setText(String.format(Locale.US, "%.3f", Vv) + "");
-                }
-                else if (Float.parseFloat(aetText11.getText().toString()) == 7)
-                {
-                    float x1 = num007;
-                    float x2 = num010;
-
-                    float a_kirp =  (1000/(x1+(num012)));
-                    float b_kirp =  (1000/(x2+(num012)));
-                    float s1m = (a_kirp)*(b_kirp);
-
-                    float w = (((num001*num003)- num005) *(s1m)*4);
-                    TextView textView142 = (TextView) findViewById(R.id.textView14);
-                    textView142.setText(String.format(Locale.US, "%.1f", w) + "");
-
-                    // цена кирпича
-                    float t = (float) (w*(num006)*0.001);
-                    TextView textView144 = (TextView) findViewById(R.id.textView20);
-                    textView144.setText(String.format(Locale.US, "%.2f", t) + "");
-
-                    // объем раствора
-                    float k1 = (num007+num012);
-
-                    //j1- количество вертикальных полос в метре (3.84) если 250
-                    float j1 = (float) ((1)/(k1*0.001));
-
-                    //Vv1 - обем раствора в этих полосах
-                    float Vv1 = (float) (((num012*0.001)*1*(num009*0.001)*j1));
-
-                    float k2 = (num010+num012);
-                    float j2 = (float) ((1)/(k2*0.001));
-                    float Vv2 = (float) (((num012*0.001)*1*(num009*0.001)*j2));
-
-                    float Vv = (float) ((Vv1+Vv2)*num001*num003*4);
-
-                    TextView textViewV = (TextView) findViewById(R.id.textView24);
-                    textViewV.setText(String.format(Locale.US, "%.3f", Vv) + "");
-                }
-
-
-                //Snackbar.make(view, "Подсчитано", Snackbar.LENGTH_SHORT)
-                //Snackbar.make(view, "Подсчитано", Snackbar.LENGTH_SHORT)
-                // .setAction("Action", null).show();
-            }}
         });
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
@@ -5358,27 +4957,18 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public boolean onLongClick(View v) {
 
-                final TextView bill83 = (TextView) findViewById(R.id.textView14);
-                final TextView bill84 = (TextView) findViewById(R.id.textView20);
-               // final TextView bill85 = (TextView) findViewById(R.id.textView43);
+                final TextView bill83 = (TextView) findViewById(R.id.textView142);
+                final TextView bill84 = (TextView) findViewById(R.id.textView14);
+                final TextView bill85 = (TextView) findViewById(R.id.textView20);
                 final TextView bill86 = (TextView) findViewById(R.id.textView24);
-                //final TextView bill87 = (TextView) findViewById(R.id.textView39);
-               // final TextView bill88 = (TextView) findViewById(R.id.textView37);
-               // final TextView bill89 = (TextView) findViewById(R.id.textView28);
+                final TextView bill87 = (TextView) findViewById(R.id.textView242);
 
-                etText83 = (TextView) findViewById(R.id.textView14);
-                etText84 = (TextView) findViewById(R.id.textView20);
-              //  etText85 = (TextView) findViewById(R.id.textView43);
-                etText86 = (TextView) findViewById(R.id.textView24);
-
-             //   etText89 = (TextView) findViewById(R.id.textView28);
 
                 bill83.setText(00.00 + "");
                 bill84.setText(00.00 + "");
-            //    bill85.setText(00.00 + "");
+                bill85.setText(00.00 + "");
                 bill86.setText(00.00 + "");
-
-               // bill89.setText(00.00 + "");
+                bill87.setText(00.00 + "");
 
                 Toast toast = Toast.makeText(getApplicationContext(),
                         "Сброс", Toast.LENGTH_SHORT);
@@ -5399,10 +4989,61 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+/*
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
 
 
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
 
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.action_settings) {
+
+            Intent a = new Intent(this,HellpActivity.class);
+            a.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(a);
+
+            //Do something
+            return true;
+        } else if (id == R.id.action_settings2) {
+
+            Intent intent = new Intent(Intent.ACTION_VIEW);
+            intent.setData(Uri.parse("market://details?id=com.betonirlite.nikolay.betonir"));
+            startActivity(intent);
+
+            //Do something
+            return true;
+        } else if (id == R.id.action_settings3) {
+
+            Intent intent = new Intent(Intent.ACTION_VIEW);
+            intent.setData(Uri.parse("https://www.youtube.com/channel/UCevOw6a0SiaFm-TGHcogQEg"));
+            startActivity(intent);
+
+            //Do something
+            return true;
+        } else if (id == R.id.action_settings2) {
+
+            Intent a = new Intent(this,KirpishActivity.class);
+            a.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(a);
+            //Do something
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+*/
 
 
     //region сохранение данных
@@ -5530,6 +5171,30 @@ public class MainActivity extends AppCompatActivity {
         sPref2 = getPreferences(MODE_PRIVATE);
         String savedText = sPref2.getString(SAVED_TEXT11, "");
         etText11.setText(savedText);
+    }
+
+
+    void saveText12() {
+        sPref2 = getPreferences(MODE_PRIVATE);
+        SharedPreferences.Editor ed = sPref2.edit();
+        ed.putString(SAVED_TEXT12, etText12.getText().toString());
+        ed.commit();
+    }
+    void loadText12() {
+        sPref2 = getPreferences(MODE_PRIVATE);
+        String savedText = sPref2.getString(SAVED_TEXT12, "");
+        etText12.setText(savedText);
+    }
+    void saveText13() {
+        sPref2 = getPreferences(MODE_PRIVATE);
+        SharedPreferences.Editor ed = sPref2.edit();
+        ed.putString(SAVED_TEXT13, etText13.getText().toString());
+        ed.commit();
+    }
+    void loadText13() {
+        sPref2 = getPreferences(MODE_PRIVATE);
+        String savedText = sPref2.getString(SAVED_TEXT13, "");
+        etText13.setText(savedText);
     }
 
 
@@ -5863,6 +5528,17 @@ public class MainActivity extends AppCompatActivity {
         String savedText = sPref.getString(SAVED_TEXT60, "");
         etText60.setText(savedText);
     }
+    void saveText61() {
+        sPref = getPreferences(MODE_PRIVATE);
+        SharedPreferences.Editor ed = sPref.edit();
+        ed.putString(SAVED_TEXT61, etText61.getText().toString());
+        ed.commit();
+    }
+    void loadText61() {
+        sPref = getPreferences(MODE_PRIVATE);
+        String savedText = sPref.getString(SAVED_TEXT61, "");
+        etText61.setText(savedText);
+    }
 
     void saveText62() {
         sPref = getPreferences(MODE_PRIVATE);
@@ -5941,15 +5617,6 @@ public class MainActivity extends AppCompatActivity {
         String savedText = sPref.getString(SAVED_TEXT68, "");
         etText68.setText(savedText);
     }
-
-
-    void saveText69() {
-        sPref = getPreferences(MODE_PRIVATE);
-        SharedPreferences.Editor ed = sPref.edit();
-        ed.putString(SAVED_TEXT69, etText69.getText().toString());
-        ed.commit();
-    }
-
 
 
 
@@ -6077,8 +5744,8 @@ public class MainActivity extends AppCompatActivity {
         saveText9();
         saveText10();
         saveText11();
-        //saveText12();
-        //saveText13();
+        saveText12();
+        saveText13();
         //saveText14();
         //saveText15();
         //saveText16();
@@ -6122,6 +5789,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         saveText60();
+        saveText61();
 
         saveText62();
         saveText63();
@@ -6153,20 +5821,14 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void onClickBloki2(View view) {
-        Intent a = new Intent(this,BlokiActivity.class);
-       a.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-       startActivity(a);
-    }
-    @Override
-    public void onBackPressed() {
-        //do something on back.
 
-        Intent a = new Intent(this, Start_Activity.class);
-        a.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-        startActivity(a);
+    public void onClick222(View view) {
+       Intent a = new Intent(this,KirpishActivity.class);
+      a.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+     startActivity(a);
+     }
 
-    }
+
     public void onClick_Ca(View view) {
         long mills = 15L;
         Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
@@ -6186,14 +5848,17 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent2);
             } else {
 
-                // Bring user to the market or let them choose an app?
-                intent = new Intent(Intent.ACTION_VIEW);
-                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                intent.setData(Uri.parse("market://details?id=" + "mobi.appplus.calculator.plus"));
-                startActivity(intent);
-            }
+            // Bring user to the market or let them choose an app?
+            intent = new Intent(Intent.ACTION_VIEW);
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            intent.setData(Uri.parse("market://details?id=" + "mobi.appplus.calculator.plus"));
+            startActivity(intent);
         }
     }
+    }
+
+    //com.google.android.calculator
+
 
     public void onClick_dim(View view) {
 
@@ -6206,4 +5871,116 @@ public class MainActivity extends AppCompatActivity {
         startActivity(a);
     }
 
-}
+
+
+
+    @Override
+    public void onBackPressed() {
+
+            t.cancel();
+            Intent a = new Intent(this, Start_Activity.class);
+            a.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(a);
+        }
+
+    public void onEmailClick(View v) {
+        long mills = 42L;
+        Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+        vibrator.vibrate(mills);
+
+        //TextView r1-результат text1;
+
+        String emailSubject = getString(R.string.lesa_ico);
+
+        String na_email = getString(R.string.na_email);
+
+
+
+
+        String r1 = getString(R.string.vsego_stoek);
+        String r2 = getString(R.string.kol_vert_radov);
+        String r3 = getString(R.string.kol_krestovin);
+        String r4 = getString(R.string.cena_orendi2);
+
+        TextView rez_text1 = (TextView) findViewById(R.id.textView14);
+        TextView rez_text2 = (TextView) findViewById(R.id.textView20);
+        TextView rez_text3 = (TextView) findViewById(R.id.textView142);
+        TextView rez_text4 = (TextView) findViewById(R.id.textView24);
+        TextView rez_text5 = (TextView) findViewById(R.id.textView242);
+
+        String rez1 = rez_text1.getText().toString();
+        String rez2 = rez_text2.getText().toString();
+        String rez3 = rez_text3.getText().toString();
+        String rez4 = rez_text4.getText().toString();
+        String rez5 = rez_text5.getText().toString();
+
+
+
+        TextView ob_wir = (TextView) findViewById(R.id.textViewWir);
+        TextView ob_wir2 = (TextView) findViewById(R.id.textViewWir3);
+        TextView ob_wir3 = (TextView) findViewById(R.id.textViewWir5);
+        TextView ob_wir4 = (TextView) findViewById(R.id.textViewWir6);
+        TextView ob_wir5 = (TextView) findViewById(R.id.textViewWir12);
+        TextView ob_wir6 = (TextView) findViewById(R.id.textViewWir10);
+        TextView ob_wir7 = (TextView) findViewById(R.id.textViewWir7);
+        TextView ob_wir8 = (TextView) findViewById(R.id.textViewWir9);
+
+        String ob1 = ob_wir.getText().toString();
+        String ob2 = ob_wir2.getText().toString();
+        String ob3 = ob_wir3.getText().toString();
+        String ob4 = ob_wir4.getText().toString();
+        String ob5 = ob_wir5.getText().toString();
+        String ob6 = ob_wir6.getText().toString();
+        String ob7 = ob_wir7.getText().toString();
+        String ob8 = ob_wir8.getText().toString();
+
+        String ida = getString(R.string.isxod_dani);
+
+
+        String r5 = getString(R.string.dlina_stroenia);
+        String r6 = getString(R.string.wirina_stroenia);
+        String r7 = getString(R.string.visota_sten_stroenia);
+        String r8 = getString(R.string.rast_megdu_stoek);
+        String r9 = getString(R.string.visota_stoek);
+        String r10 = getString(R.string.wirina_stoyki);
+        String r11 = getString(R.string.cena_orendi);
+        String r12 = getString(R.string.dni_orendi);
+
+
+
+
+        Intent intent = new Intent(Intent.ACTION_SEND);
+        intent.putExtra(Intent.EXTRA_SUBJECT, emailSubject);
+        intent.putExtra(Intent.EXTRA_TEXT, new String(
+
+                (r1)+(rez1)+
+                        "\n"+(r2)+(rez2)+" → "+(rez3)+
+                        "\n"+(r3)+(rez4)+
+                        "\n"+(r4)+(rez5)+
+                        "\n"+"......."+
+                        "\n"+(ida)+
+                        "\n"+(r5)+(ob1)+
+                        "\n"+(r6)+(ob2)+
+                        "\n"+(r7)+(ob3)+
+                        "\n"+(r8)+(ob4)+
+                        "\n"+(r9)+(ob5)+
+                        "\n"+(r10)+(ob6)+
+                        "\n"+(r11)+(ob7)+
+                        "\n"+(r12)+(ob8)
+
+        ));
+        {
+            intent.setType("plain/text");
+        }
+        startActivity(Intent.createChooser(intent, na_email));
+    }
+    }
+
+
+
+
+
+
+
+
+

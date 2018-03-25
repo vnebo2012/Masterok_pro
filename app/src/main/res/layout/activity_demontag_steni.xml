@@ -46,7 +46,15 @@
                     android:textColor="@android:color/white"
                     android:textSize="18dp"
                     android:textStyle="bold|italic" />
-
+                <ImageButton
+                    android:id="@+id/pismo"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@color/colorPrimary"
+                    android:onClick="onEmailClick"
+                    android:scaleType="fitCenter"
+                    android:src="@mipmap/ic_pod" />
                 <ImageButton
                     android:id="@+id/calk"
                     android:layout_width="wrap_content"

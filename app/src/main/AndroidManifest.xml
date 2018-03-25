@@ -8,6 +8,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.BODY_SENSORS"/>
 
 
 
@@ -36,7 +37,7 @@
             android:name=".BlokiActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".MainActivity"
+            android:name=".KirpishActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Pol_Freza_stena_Activity"
@@ -139,6 +140,60 @@
         <activity
             android:name=".Obrewotka_Veranda_Activity"
             android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
+            android:name=".Pena_A_Activity"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
+            android:name=".Elektro_tablica_Activity"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+
+        <activity
+            android:name=".Ves_Activity"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
+            android:name=".LesaActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
+            android:name=".Les_Activity"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
+            android:name=".Balka2_Activity"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
+            android:name=".Lesnica_Activity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".Lumex.LumexActivity" />
+        <activity android:name=".Lumex.SamsungActivity" />
+
+        <activity
+            android:name=".News.StattiActivity"
+            android:label="@string/title_stati" />
+
+
+        <activity android:name=".News.MenuNewsActivity"
+            android:label="@string/title_stati" />
+
+        <activity android:name=".News.NewInoMaterialActivity"
+            android:label="@string/title_stati_ino_mat" />
+
+        <activity android:name=".News.EkoStroykaActivity"
+            android:label="@string/title_stati_eko" />
+
+        <activity android:name=".News.StroimDomActivity"
+            android:label="@string/title_stati_stoim_dom" />
+
+        <activity android:name=".News.InoStroykaActivity"
+            android:label="@string/title_stati_ino_stroyka" />
+
+        <activity android:name=".News.EnergoEfektActivity"
+            android:label="@string/title_stati_energo_efekt" />
 
     </application>
 
