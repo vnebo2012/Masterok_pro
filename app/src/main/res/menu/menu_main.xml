@@ -10,5 +10,11 @@
         android:title="Инструкция"
         app:showAsAction="never" />
 
+    <item
+        android:id="@+id/action_settings2"
+        android:orderInCategory="100"
+        android:title="v 1.17"
+        app:showAsAction="never" />
+
 
 </menu>

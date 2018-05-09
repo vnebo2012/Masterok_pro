@@ -59,9 +59,9 @@
 
                             <ImageButton
                                 android:id="@+id/button2412"
-                                android:layout_width="45dp"
-                                android:layout_height="45dp"
-                                android:layout_margin="3dp"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_margin="2dp"
                                 android:layout_weight="1"
                                 android:background="@drawable/plita_ico"
                                 android:onClick="onClickFun8"
@@ -89,9 +89,9 @@
 
                             <ImageButton
                                 android:id="@+id/imageButton"
-                                android:layout_width="45dp"
-                                android:layout_height="45dp"
-                                android:layout_margin="3dp"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_margin="2dp"
                                 android:layout_weight="1"
                                 android:background="@drawable/armo_ico"
                                 android:onClick="onClickFun8"
@@ -120,9 +120,9 @@
 
                             <ImageButton
                                 android:id="@+id/imageButton2"
-                                android:layout_width="45dp"
-                                android:layout_height="45dp"
-                                android:layout_margin="3dp"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_margin="2dp"
                                 android:layout_weight="1"
                                 android:background="@drawable/kirpi_ico"
                                 android:onClick="onClickKirpish"
@@ -158,9 +158,9 @@
 
                             <ImageButton
                                 android:id="@+id/button2413"
-                                android:layout_width="45dp"
-                                android:layout_height="45dp"
-                                android:layout_margin="3dp"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_margin="2dp"
                                 android:layout_weight="1"
                                 android:background="@drawable/plitka_ico"
                                 android:onClick="onClickFun8"
@@ -188,9 +188,9 @@
 
                             <ImageButton
                                 android:id="@+id/imageButton11"
-                                android:layout_width="45dp"
-                                android:layout_height="45dp"
-                                android:layout_margin="3dp"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_margin="2dp"
                                 android:layout_weight="1"
                                 android:background="@drawable/kriwa_ico"
                                 android:onClick="onClickKr1"
@@ -219,9 +219,9 @@
 
                             <ImageButton
                                 android:id="@+id/imageButton29"
-                                android:layout_width="45dp"
-                                android:layout_height="45dp"
-                                android:layout_margin="3dp"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_margin="2dp"
                                 android:layout_weight="1"
                                 android:background="@drawable/bloki_ico"
                                 android:onClick="onClickBloki"
@@ -257,9 +257,9 @@
 
                             <ImageButton
                                 android:id="@+id/button24124"
-                                android:layout_width="45dp"
-                                android:layout_height="45dp"
-                                android:layout_margin="3dp"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_margin="2dp"
                                 android:layout_weight="1"
                                 android:background="@drawable/penop_ico"
                                 android:onClick="onClickPen"
@@ -287,9 +287,9 @@
 
                             <ImageButton
                                 android:id="@+id/button4010"
-                                android:layout_width="45dp"
-                                android:layout_height="45dp"
-                                android:layout_margin="3dp"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_margin="2dp"
                                 android:layout_weight="1"
                                 android:background="@drawable/kraska_ico"
                                 android:onClick="onClickFun8"
@@ -318,9 +318,9 @@
 
                             <ImageButton
                                 android:id="@+id/button407"
-                                android:layout_width="45dp"
-                                android:layout_height="45dp"
-                                android:layout_margin="3dp"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_margin="2dp"
                                 android:layout_weight="1"
                                 android:background="@drawable/gipsokart_ico"
                                 android:onClick="button407"
@@ -356,9 +356,9 @@
 
                             <ImageButton
                                 android:id="@+id/button400"
-                                android:layout_width="45dp"
-                                android:layout_height="45dp"
-                                android:layout_margin="3dp"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_margin="2dp"
                                 android:layout_weight="1"
                                 android:background="@drawable/wpaklo_ico"
                                 android:onClick="onClickFun8"
@@ -386,9 +386,9 @@
 
                             <ImageButton
                                 android:id="@+id/button4071"
-                                android:layout_width="45dp"
-                                android:layout_height="45dp"
-                                android:layout_margin="3dp"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_margin="2dp"
                                 android:layout_weight="1"
                                 android:background="@drawable/sept_ico"
                                 android:onClick="onClickFun8"
@@ -417,9 +417,9 @@
 
                             <ImageButton
                                 android:id="@+id/button2414"
-                                android:layout_width="45dp"
-                                android:layout_height="45dp"
-                                android:layout_margin="3dp"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_margin="2dp"
                                 android:layout_weight="1"
                                 android:background="@drawable/styagka_ico"
                                 android:onClick="onClickFun8"
@@ -455,9 +455,9 @@
 
                             <ImageButton
                                 android:id="@+id/imageButton3"
-                                android:layout_width="45dp"
-                                android:layout_height="45dp"
-                                android:layout_margin="3dp"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_margin="2dp"
                                 android:layout_weight="1"
                                 android:background="@drawable/radiators_ico"
 
@@ -487,9 +487,9 @@
 
                             <ImageButton
                                 android:id="@+id/button24121"
-                                android:layout_width="45dp"
-                                android:layout_height="45dp"
-                                android:layout_margin="3dp"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_margin="2dp"
                                 android:layout_weight="1"
                                 android:background="@drawable/elektro_ico"
                                 android:text="Плита перекрытия"
@@ -518,9 +518,9 @@
 
                             <ImageButton
                                 android:id="@+id/button3000"
-                                android:layout_width="45dp"
-                                android:layout_height="45dp"
-                                android:layout_margin="3dp"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_margin="2dp"
                                 android:layout_weight="1"
                                 android:background="@drawable/demontag_ico"
                                 android:onClick="onClick_Demontag_Steni"
@@ -557,9 +557,9 @@
 
                             <ImageButton
                                 android:id="@+id/imageButton32222"
-                                android:layout_width="45dp"
-                                android:layout_height="45dp"
-                                android:layout_margin="3dp"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_margin="2dp"
                                 android:layout_weight="1"
                                 android:background="@drawable/balon2"
 
@@ -589,9 +589,9 @@
 
                             <ImageButton
                                 android:id="@+id/imageButton3222232"
-                                android:layout_width="45dp"
-                                android:layout_height="45dp"
-                                android:layout_margin="3dp"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_margin="2dp"
                                 android:layout_weight="1"
                                 android:background="@drawable/ves_doma"
 
@@ -623,9 +623,9 @@
 
                             <ImageButton
                                 android:id="@+id/button30002222"
-                                android:layout_width="45dp"
-                                android:layout_height="45dp"
-                                android:layout_margin="3dp"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_margin="2dp"
                                 android:layout_weight="1"
                                 android:background="@drawable/lesa_ico"
                                 android:onClick="onClick_Lesa"
@@ -663,9 +663,9 @@
 
                             <ImageButton
                                 android:id="@+id/imageButton322222"
-                                android:layout_width="45dp"
-                                android:layout_height="45dp"
-                                android:layout_margin="3dp"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_margin="2dp"
                                 android:layout_weight="1"
                                 android:background="@drawable/les2"
 
@@ -694,9 +694,9 @@
 
                             <ImageButton
                                 android:id="@+id/imageButton100"
-                                android:layout_width="45dp"
-                                android:layout_height="45dp"
-                                android:layout_margin="3dp"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_margin="2dp"
                                 android:layout_weight="1"
 
                                 android:background="@drawable/lumex"
@@ -727,9 +727,9 @@
 
                             <ImageButton
                                 android:id="@+id/button300022228"
-                                android:layout_width="45dp"
-                                android:layout_height="45dp"
-                                android:layout_margin="3dp"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_margin="2dp"
                                 android:layout_weight="1"
                                 android:background="@drawable/lesnica2"
                                 android:onClick="onClickLesnica"
@@ -742,6 +742,111 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="@string/lesnica"
+                                android:textColor="@color/colorBlack"
+                                android:textSize="14dp" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="3dp"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+
+                            <ImageButton
+                                android:id="@+id/imageButton3222221"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_margin="2dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/armsrtong"
+                                android:onClick="onClickArmstrong"
+                                android:textColor="@android:color/background_light"
+                                android:textSize="18sp" />
+
+                            <TextView
+                                android:id="@+id/textView56122221"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="@string/armstrong"
+                                android:textColor="@color/colorBlack"
+                                android:textSize="14dp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+
+                            <ImageButton
+                                android:id="@+id/imageButton1001"
+                                android:layout_width="45dp"
+                                android:layout_height="45dp"
+                                android:layout_margin="3dp"
+                                android:layout_weight="1"
+                                android:alpha="0"
+                                android:background="@drawable/lumex"
+                                android:text="Плита перекрытия"
+                                android:textColor="@android:color/background_light"
+                                android:textSize="18sp" />
+
+                            <TextView
+                                android:id="@+id/textView561222221"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:alpha="0"
+                                android:gravity="center"
+                                android:text="@string/lumex"
+                                android:textColor="@color/colorBlack"
+                                android:textSize="14dp" />
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+
+                            <ImageButton
+                                android:id="@+id/button3000222281"
+                                android:layout_width="45dp"
+                                android:layout_height="45dp"
+                                android:layout_margin="3dp"
+                                android:layout_weight="1"
+                                android:alpha="0"
+
+                                android:background="@drawable/lesnica2"
+                                android:text="Плита перекрытия"
+                                android:textColor="@android:color/background_light"
+                                android:textSize="18sp" />
+
+                            <TextView
+                                android:id="@+id/textView2967791"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:alpha="0"
                                 android:gravity="center"
                                 android:text="@string/lesnica"
                                 android:textColor="@color/colorBlack"

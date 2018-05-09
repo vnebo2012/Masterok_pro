@@ -49,7 +49,7 @@
             android:backgroundTint="#ffffff"
             android:hint="введите название темы"
             android:inputType="textEmailSubject"
-            android:text="Пару слов о Мастерок"
+            android:text="Пару слов о Мастерок Pro"
             android:textColor="#ffffff"
             android:textSize="18dp" />
 

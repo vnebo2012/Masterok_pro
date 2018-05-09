@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
@@ -30,8 +31,13 @@ import com.my.masterok.masterokpro.News.MenuNewsActivity;
 
 public class Start_Activity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
-    // private AdView mAdView;
+
+
+    Context context;
     Context context5;
+    Context context6;
+    final Context context2 = this;
+    final String MY_SETTINGS2 = "saved_text_oc";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -130,7 +136,63 @@ public class Start_Activity extends AppCompatActivity implements NavigationView.
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
-            super.onBackPressed();
+
+
+            SharedPreferences sp = getSharedPreferences(MY_SETTINGS2,
+                    Context.MODE_PRIVATE);
+            boolean hasVisited = sp.getBoolean("hasVisited_oc", false);
+
+            if (!hasVisited) {
+
+                context6 = Start_Activity.this;
+                String title = "Вам нравится приложение?";
+                String message = "Оцените его в Google Play ))";
+                String button1String = "Да";
+                String button2String = "Нет";
+                AlertDialog.Builder ad;
+
+                ad = new AlertDialog.Builder(context6);
+                ad.setTitle(title);  // заголовок
+                ad.setMessage(message); // сообщение
+                ad.setPositiveButton(button1String, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int arg1) {
+
+                        Intent intent = new Intent(Intent.ACTION_VIEW);
+                        intent.setData(Uri.parse("https://play.google.com/store/apps/details?id=com.my.masterok.masterokpro"));
+                        startActivity(intent);
+                    }
+                });
+                ad.setNegativeButton(button2String, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int arg1) {
+
+                    }
+                });
+                ad.setCancelable(true);
+                ad.setOnCancelListener(new DialogInterface.OnCancelListener() {
+                    public void onCancel(DialogInterface dialog) {
+                        // Toast.makeText(context5, "Вы ничего не выбрали",
+                        //    Toast.LENGTH_LONG).show();
+                    }
+                });
+
+                ad.show();
+            }else {
+
+                super.onBackPressed();}
+
+
+            long mills = 15L;
+            Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+            vibrator.vibrate(mills);
+
+            // выводим нужную активность
+            // напр.
+            //Intent intent = new Intent(this, Main2Activity.class);
+            // startActivity(intent);
+
+            SharedPreferences.Editor e = sp.edit();
+            e.putBoolean("hasVisited_oc", true);
+            e.commit(); // не забудьте подтвердить изменения
         }
     }
 
@@ -194,10 +256,6 @@ public class Start_Activity extends AppCompatActivity implements NavigationView.
 
             } else {
 
-
-
-
-
                 context5 = Start_Activity.this;
                 String title = "Нет подключения к Wi-Fi !";
                 //String message = "Выбери пищу";
@@ -219,9 +277,6 @@ public class Start_Activity extends AppCompatActivity implements NavigationView.
                 ad.setNegativeButton(button2String, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int arg1) {
 
-
-                        //Toast.makeText(context5, "Возможно вы правы", Toast.LENGTH_LONG)
-                        //    .show();
                     }
                 });
                 ad.setCancelable(true);
@@ -269,6 +324,16 @@ public class Start_Activity extends AppCompatActivity implements NavigationView.
 
     public void onClickLumex(View view) {
         Intent a = new Intent(this,LumexActivity.class);
+        a.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(a);
+        long mills = 15L;
+        Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+        vibrator.vibrate(mills);
+
+    }
+
+    public void onClickArmstrong(View view) {
+        Intent a = new Intent(this,ArmstrongActivity.class);
         a.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(a);
         long mills = 15L;
