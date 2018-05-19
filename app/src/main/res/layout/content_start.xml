@@ -797,24 +797,23 @@
 
                             <ImageButton
                                 android:id="@+id/imageButton1001"
-                                android:layout_width="45dp"
-                                android:layout_height="45dp"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
                                 android:layout_margin="3dp"
                                 android:layout_weight="1"
-                                android:alpha="0"
-                                android:background="@drawable/lumex"
+                                android:background="@drawable/amat"
+                                android:onClick="onClickArmatura"
                                 android:text="Плита перекрытия"
                                 android:textColor="@android:color/background_light"
                                 android:textSize="18sp" />
 
                             <TextView
-                                android:id="@+id/textView561222221"
+                                android:id="@+id/textViewArmatura"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:alpha="0"
                                 android:gravity="center"
-                                android:text="@string/lumex"
+                                android:text="@string/armatura1"
                                 android:textColor="@color/colorBlack"
                                 android:textSize="14dp" />
                         </LinearLayout>
@@ -830,12 +829,12 @@
 
                             <ImageButton
                                 android:id="@+id/button3000222281"
-                                android:layout_width="45dp"
-                                android:layout_height="45dp"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
                                 android:layout_margin="3dp"
                                 android:layout_weight="1"
-                                android:alpha="0"
 
+                                android:alpha="0"
                                 android:background="@drawable/lesnica2"
                                 android:text="Плита перекрытия"
                                 android:textColor="@android:color/background_light"

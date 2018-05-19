@@ -37,6 +37,11 @@
         <activity
             android:name=".ArmstrongActivity"
             android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
+            android:name=".ArmaturaActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+
         <activity
             android:name=".BlokiActivity"
             android:theme="@style/AppTheme.NoActionBar" />
