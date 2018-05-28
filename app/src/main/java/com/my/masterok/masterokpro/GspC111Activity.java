@@ -25,7 +25,7 @@ import android.widget.Toast;
 
 import java.util.Locale;
 
-public class ArmaturaActivity extends AppCompatActivity {
+public class GspC111Activity extends AppCompatActivity {
 
 
     Button etText;
@@ -188,6 +188,10 @@ public class ArmaturaActivity extends AppCompatActivity {
     TextView etText181;
     TextView etText144;
 
+    TextView etText100;
+    TextView etText101;
+    TextView etText102;
+
 
 
     Button btnSave, btnLoad;
@@ -344,6 +348,10 @@ public class ArmaturaActivity extends AppCompatActivity {
     final String SAVED_TEXT304 = "saved_text304";
     final String SAVED_TEXT181 = "saved_text181";
     final String SAVED_TEXT144 = "saved_text144";
+
+    final String SAVED_TEXT100 = "saved_text100";
+    final String SAVED_TEXT101 = "saved_text101";
+    final String SAVED_TEXT102 = "saved_text102";
 
 
 
@@ -674,6 +682,10 @@ public class ArmaturaActivity extends AppCompatActivity {
     private Button aetText303;
     private Button aetText304;
 
+    private Button aetText100;
+    private Button aetText101;
+    private Button aetText102;
+
 
 
 
@@ -997,6 +1009,10 @@ public class ArmaturaActivity extends AppCompatActivity {
     private TextView final_text181;
     private TextView final_text144;
 
+    private TextView final_text100;
+    private TextView final_text101;
+    private TextView final_text102;
+
     ImageView imageView;
     ImageView imageView1;
 
@@ -1010,12 +1026,12 @@ public class ArmaturaActivity extends AppCompatActivity {
      * Called when the activity is first created.
      */
 
-    final String MY_SETTINGS = "saved_text_armatura";
+    final String MY_SETTINGS = "saved_text_gsp_c111";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_armatura);
+        setContentView(R.layout.activity_gsp_c111);
 
 
 
@@ -1043,7 +1059,7 @@ public class ArmaturaActivity extends AppCompatActivity {
         SharedPreferences sp = getSharedPreferences(MY_SETTINGS,
                 Context.MODE_PRIVATE);
         // проверяем, первый ли раз открывается программа
-        boolean hasVisited = sp.getBoolean("saved_text_armatura", false);
+        boolean hasVisited = sp.getBoolean("saved_text_gsp_c111", false);
 
         if (!hasVisited) {
 
@@ -1115,8 +1131,16 @@ public class ArmaturaActivity extends AppCompatActivity {
             final TextView bill304 = (TextView) findViewById(R.id.textView4);
 
             final TextView bill12 = (TextView) findViewById(R.id.textView142);
-
+            final TextView bill13 = (TextView) findViewById(R.id.textView143);
+            final TextView bill242 = (TextView) findViewById(R.id.textView242);
+            final TextView bill84 = (TextView) findViewById(R.id.textView20);
+            final TextView bill86 = (TextView) findViewById(R.id.textView24);
+            final TextView bill181 = (TextView) findViewById(R.id.textView181);
             final TextView bill144 = (TextView) findViewById(R.id.textView144);
+
+            final TextView bill100 = (TextView) findViewById(R.id.textView100);
+            final TextView bill101 = (TextView) findViewById(R.id.textView101);
+            final TextView bill102 = (TextView) findViewById(R.id.textView102);
 
 
             etText83 = (TextView) findViewById(R.id.textView14);
@@ -1144,31 +1168,39 @@ public class ArmaturaActivity extends AppCompatActivity {
                                 public void onClick(DialogInterface dialog,int id) {
 
 
+                                    bill13.setText(0.0 + "");
 
-                                    bill23.setText(6 + "");
-                                    bill24.setText(8 + "");
-                                    bill25.setText(10 + "");
-                                    bill26.setText(12 + "");
-                                    bill27.setText(14 + "");
-                                    bill28.setText(16 + "");
-                                    bill29.setText(18 + "");
-                                    bill30.setText(20 + "");
-                                    bill31.setText(22 + "");
-                                    bill32.setText(25 + "");
-                                    bill33.setText(28 + "");
+                                    bill23.setText(2 + "");
+                                    bill24.setText(3.08 + "");
+                                    bill25.setText(4 + "");
+                                    bill26.setText(5 + "");
+                                    bill27.setText(6 + "");
+                                    bill28.setText(7 + "");
+                                    bill29.setText(8 + "");
+                                    bill30.setText(10 + "");
+                                    bill31.setText(15 + "");
+                                    bill32.setText(20 + "");
+                                    bill33.setText(30 + "");
 
 
-                                    bill79.setText(10 + "");
-                                    bill80.setText(30 + "");
-                                    bill81.setText(50 + "");
-                                    bill82.setText(67 + "");
+                                    bill79.setText(2.5 + "");
+                                    bill80.setText(2.7 + "");
+                                    bill81.setText(3.0 + "");
+                                    bill82.setText(3.2 + "");
 
                                     bill12.setText(0.0 + "");
-
+                                    bill84.setText(0.0 + "");
+                                    bill86.setText(0.0 + "");
+                                    bill242.setText(0.0 + "");
+                                    bill181.setText(0.0 + "");
                                     bill144.setText(0.0 + "");
 
-                                    bill230.setText(25 + "");
-                                    bill231.setText(30 + "");
+                                    bill100.setText(0.0 + "");
+                                    bill101.setText(0.0 + "");
+                                    bill102.setText(0.0 + "");
+
+                                    bill230.setText(1.1 + "");
+                                    bill231.setText(1.15 + "");
 
 
 
@@ -1197,7 +1229,7 @@ public class ArmaturaActivity extends AppCompatActivity {
             // startActivity(intent);
 
             SharedPreferences.Editor e = sp.edit();
-            e.putBoolean("saved_text_armatura", true);
+            e.putBoolean("saved_text_gsp_c111", true);
             e.commit(); // не забудьте подтвердить изменения
         }
 
@@ -1261,13 +1293,17 @@ public class ArmaturaActivity extends AppCompatActivity {
         etText247 = (Button) findViewById(R.id.button247);
         etText248 = (Button) findViewById(R.id.button248);
 
-
-
+        etText84 = (TextView) findViewById(R.id.textView20);
+        etText86 = (TextView) findViewById(R.id.textView24);
         etText12 = (TextView) findViewById(R.id.textView142);
-
-
-
+        etText85 = (TextView) findViewById(R.id.textView143);
+        etText13 = (TextView) findViewById(R.id.textView242);
+        etText181 = (TextView) findViewById(R.id.textView181);
         etText144 = (TextView) findViewById(R.id.textView144);
+
+        etText100 = (TextView) findViewById(R.id.textView100);
+        etText101 = (TextView) findViewById(R.id.textView101);
+        etText102 = (TextView) findViewById(R.id.textView102);
 
 
 
@@ -1286,18 +1322,21 @@ public class ArmaturaActivity extends AppCompatActivity {
         loadText79();
         loadText80();
         loadText81();
-
         loadText82();
 
-
-
-
+        loadText84();
+        loadText85();
+        loadText86();
         loadText12();
-
-
+        loadText13();
+        loadText181();
         loadText230();
         loadText231();
         loadText144();
+
+        loadText100();
+        loadText101();
+        loadText102();
 
 
 
@@ -2291,7 +2330,6 @@ public class ArmaturaActivity extends AppCompatActivity {
                     toast.show();
 
 
-
                     final TextView bill23 = (TextView) findViewById(R.id.button97);
                     final TextView bill24 = (TextView) findViewById(R.id.button98);
                     final TextView bill25 = (TextView) findViewById(R.id.button99);
@@ -2350,8 +2388,16 @@ public class ArmaturaActivity extends AppCompatActivity {
                     final TextView bill304 = (TextView) findViewById(R.id.textView4);
 
                     final TextView bill12 = (TextView) findViewById(R.id.textView142);
-
+                    final TextView bill13 = (TextView) findViewById(R.id.textView143);
+                    final TextView bill242 = (TextView) findViewById(R.id.textView242);
+                    final TextView bill84 = (TextView) findViewById(R.id.textView20);
+                    final TextView bill86 = (TextView) findViewById(R.id.textView24);
+                    final TextView bill181 = (TextView) findViewById(R.id.textView181);
                     final TextView bill144 = (TextView) findViewById(R.id.textView144);
+
+                    final TextView bill100 = (TextView) findViewById(R.id.textView100);
+                    final TextView bill101 = (TextView) findViewById(R.id.textView101);
+                    final TextView bill102 = (TextView) findViewById(R.id.textView102);
 
 
                     etText83 = (TextView) findViewById(R.id.textView14);
@@ -2366,34 +2412,39 @@ public class ArmaturaActivity extends AppCompatActivity {
 
 
 
+                                            bill13.setText(0.0 + "");
+                                            bill23.setText(2 + "");
+                                            bill24.setText(3.08 + "");
+                                            bill25.setText(4 + "");
+                                            bill26.setText(5 + "");
+                                            bill27.setText(6 + "");
+                                            bill28.setText(7 + "");
+                                            bill29.setText(8 + "");
+                                            bill30.setText(10 + "");
+                                            bill31.setText(15 + "");
+                                            bill32.setText(20 + "");
+                                            bill33.setText(30 + "");
 
 
-                    bill23.setText(6 + "");
-                    bill24.setText(8 + "");
-                    bill25.setText(10 + "");
-                    bill26.setText(12 + "");
-                    bill27.setText(14 + "");
-                    bill28.setText(16 + "");
-                    bill29.setText(18 + "");
-                    bill30.setText(20 + "");
-                    bill31.setText(22 + "");
-                    bill32.setText(25 + "");
-                    bill33.setText(28 + "");
+                    bill79.setText(2.5 + "");
+                    bill80.setText(2.7 + "");
+                    bill81.setText(3.0 + "");
+                    bill82.setText(3.2 + "");
 
+                                            bill12.setText(0.0 + "");
+                                            bill84.setText(0.0 + "");
+                                            bill86.setText(0.0 + "");
+                                            bill242.setText(0.0 + "");
+                                            bill181.setText(0.0 + "");
+                                            bill144.setText(0.0 + "");
 
-                    bill79.setText(10 + "");
-                    bill80.setText(30 + "");
-                    bill81.setText(50 + "");
-                    bill82.setText(67 + "");
+                                            bill100.setText(0.0 + "");
+                                            bill101.setText(0.0 + "");
+                                            bill102.setText(0.0 + "");
 
-                    bill12.setText(0.0 + "");
-
-                    bill144.setText(0.0 + "");
-
-                    bill230.setText(25 + "");
-                    bill231.setText(30 + "");
-
-                                        }else
+                                            bill230.setText(1.1 + "");
+                                            bill231.setText(1.15 + "");
+                }else
                 {
 
                 switch (v.getId()) {
@@ -2558,7 +2609,7 @@ public class ArmaturaActivity extends AppCompatActivity {
                         aetText23 = (Button) findViewById(R.id.button97);
                         float num023 = Float.parseFloat(aetText23.getText().toString());
                         float w23 = (float) num023;
-                        textView023.setText(String.format(Locale.US, "%.0f", w23) + "");
+                        textView023.setText(String.format(Locale.US, "%.2f", w23) + "");
                         Animation anim12 = AnimationUtils.loadAnimation(
                                 getApplicationContext(), R.anim.sms_anim);
                         final Button button12 = (Button) findViewById(R.id.button97);
@@ -2570,7 +2621,7 @@ public class ArmaturaActivity extends AppCompatActivity {
                         aetText24 = (Button) findViewById(R.id.button98);
                         float num024 = Float.parseFloat(aetText24.getText().toString());
                         float w24 = (float) num024;
-                        textView024.setText(String.format(Locale.US, "%.0f", w24) + "");
+                        textView024.setText(String.format(Locale.US, "%.2f", w24) + "");
                         Animation anim13 = AnimationUtils.loadAnimation(
                                 getApplicationContext(), R.anim.sms_anim);
                         final Button button13 = (Button) findViewById(R.id.button98);
@@ -2582,7 +2633,7 @@ public class ArmaturaActivity extends AppCompatActivity {
                         aetText25 = (Button) findViewById(R.id.button99);
                         float num025 = Float.parseFloat(aetText25.getText().toString());
                         float w25 = (float) num025;
-                        textView025.setText(String.format(Locale.US, "%.0f", w25) + "");
+                        textView025.setText(String.format(Locale.US, "%.2f", w25) + "");
                         Animation anim14 = AnimationUtils.loadAnimation(
                                 getApplicationContext(), R.anim.sms_anim);
                         final Button button14 = (Button) findViewById(R.id.button99);
@@ -2595,7 +2646,7 @@ public class ArmaturaActivity extends AppCompatActivity {
                         aetText26 = (Button) findViewById(R.id.button100);
                         float num026 = Float.parseFloat(aetText26.getText().toString());
                         float w26 = (float) num026;
-                        textView026.setText(String.format(Locale.US, "%.0f", w26) + "");
+                        textView026.setText(String.format(Locale.US, "%.2f", w26) + "");
 
                         Animation anim15 = AnimationUtils.loadAnimation(
                                 getApplicationContext(), R.anim.sms_anim);
@@ -2609,7 +2660,7 @@ public class ArmaturaActivity extends AppCompatActivity {
                         aetText27 = (Button) findViewById(R.id.button101);
                         float num027 = Float.parseFloat(aetText27.getText().toString());
                         float w27 = (float) num027;
-                        textView027.setText(String.format(Locale.US, "%.0f", w27) + "");
+                        textView027.setText(String.format(Locale.US, "%.2f", w27) + "");
 
                         Animation anim16 = AnimationUtils.loadAnimation(
                                 getApplicationContext(), R.anim.sms_anim);
@@ -2623,7 +2674,7 @@ public class ArmaturaActivity extends AppCompatActivity {
                         aetText28 = (Button) findViewById(R.id.button102);
                         float num028 = Float.parseFloat(aetText28.getText().toString());
                         float w28 = (float) num028;
-                        textView028.setText(String.format(Locale.US, "%.0f", w28) + "");
+                        textView028.setText(String.format(Locale.US, "%.2f", w28) + "");
 
                         Animation anim17 = AnimationUtils.loadAnimation(
                                 getApplicationContext(), R.anim.sms_anim);
@@ -2637,7 +2688,7 @@ public class ArmaturaActivity extends AppCompatActivity {
                         aetText29 = (Button) findViewById(R.id.button103);
                         float num029 = Float.parseFloat(aetText29.getText().toString());
                         float w29 = (float) num029;
-                        textView029.setText(String.format(Locale.US, "%.0f", w29) + "");
+                        textView029.setText(String.format(Locale.US, "%.2f", w29) + "");
 
                         Animation anim18 = AnimationUtils.loadAnimation(
                                 getApplicationContext(), R.anim.sms_anim);
@@ -2651,7 +2702,7 @@ public class ArmaturaActivity extends AppCompatActivity {
                         aetText30 = (Button) findViewById(R.id.button104);
                         float num030 = Float.parseFloat(aetText30.getText().toString());
                         float w30 = (float) num030;
-                        textView030.setText(String.format(Locale.US, "%.0f", w30) + "");
+                        textView030.setText(String.format(Locale.US, "%.2f", w30) + "");
                         Animation anim19 = AnimationUtils.loadAnimation(
                                 getApplicationContext(), R.anim.sms_anim);
                         final Button button19 = (Button) findViewById(R.id.button104);
@@ -2664,7 +2715,7 @@ public class ArmaturaActivity extends AppCompatActivity {
                         aetText31 = (Button) findViewById(R.id.button105);
                         float num031 = Float.parseFloat(aetText31.getText().toString());
                         float w31 = (float) num031;
-                        textView031.setText(String.format(Locale.US, "%.0f", w31) + "");
+                        textView031.setText(String.format(Locale.US, "%.2f", w31) + "");
                         Animation anim20 = AnimationUtils.loadAnimation(
                                 getApplicationContext(), R.anim.sms_anim);
                         final Button button20 = (Button) findViewById(R.id.button105);
@@ -2677,7 +2728,7 @@ public class ArmaturaActivity extends AppCompatActivity {
                         aetText32 = (Button) findViewById(R.id.button11);
                         float num032 = Float.parseFloat(aetText32.getText().toString());
                         float w32 = (float) num032;
-                        textView032.setText(String.format(Locale.US, "%.0f", w32) + "");
+                        textView032.setText(String.format(Locale.US, "%.2f", w32) + "");
 
                         Animation anim21 = AnimationUtils.loadAnimation(
                                 getApplicationContext(), R.anim.sms_anim);
@@ -2690,7 +2741,7 @@ public class ArmaturaActivity extends AppCompatActivity {
                         aetText33 = (Button) findViewById(R.id.button12);
                         float num033 = Float.parseFloat(aetText33.getText().toString());
                         float w33 = (float) num033;
-                        textView033.setText(String.format(Locale.US, "%.0f", w33) + "");
+                        textView033.setText(String.format(Locale.US, "%.2f", w33) + "");
 
                         Animation anim22 = AnimationUtils.loadAnimation(
                                 getApplicationContext(), R.anim.sms_anim);
@@ -3998,33 +4049,81 @@ public class ArmaturaActivity extends AppCompatActivity {
                 float num008 = Float.parseFloat(aetText8.getText().toString());
                 float num010 = Float.parseFloat(aetText10.getText().toString());
 
-                //F = 3.14 x D2/ 4 = 0.785 x D2
-                //V = F x L, где
-                //V – объем тела, м3
-                //F – площадь его поперечного сечения, м2
-                //L – длина тела, м
-                //р – удельный вес стали. Он равен 7850 кг/м3.
-                //int a1 = 3;
-                //int b1 = 2;
-                //System.out.printf("Число 3 в квадрате равно %.0f \n", Math.pow(a1, b1));
+                if (Float.parseFloat(aetText8.getText().toString()) > 2.5)
+                {
+                    float S = (num002*num008);
+                    float Skoef2 = S*num010*2; // Площадь с двох сторон + запас (коеф)
+                    float Skoef1 = S*num010; // Площадь с одной стороны + запас (коеф)
+                    float ListGsp = Skoef2/3;
+                    float ProfilPn = (float) (Skoef1*1.3);
+                    float ProfilPs = (float) (Skoef1*2.0);
+                    float TN25 = Skoef1*34;
+                    float К_6_35 = (float) (Skoef1*1.6);
+                    float Minvata = Skoef1*1;
+                    float LentaArmo = (float) (Skoef1*2.2);
+                    float LentaUplot = (float) (Skoef1*1.2);
+                    float Fugen = (float) (Skoef1*0.9);
+                    float Grunt = (float) (Skoef1*0.2);
 
-                float Pop_sehenie = (float) (0.785 * Math.pow(num002, 2));
-                float Pop_sehenie_m = (float) (Pop_sehenie * 0.001);
-                float V_arm = Pop_sehenie_m * num008;
-                float p = (float) 7.850;
-                float Ves = V_arm*p;
-                float Stoimost = Ves*num010;
+                    TextView textView142 = (TextView) findViewById(R.id.textView142);
+                    TextView textView144 = (TextView) findViewById(R.id.textView144);
+                    TextView textView143 = (TextView) findViewById(R.id.textView143);
+                    TextView textView242 = (TextView) findViewById(R.id.textView242);
+                    TextView textView20 = (TextView) findViewById(R.id.textView20);
+                    TextView textView24 = (TextView) findViewById(R.id.textView24);
+                    TextView textView181 = (TextView) findViewById(R.id.textView181);
+                    TextView textView100 = (TextView) findViewById(R.id.textView100);
+                    TextView textView101 = (TextView) findViewById(R.id.textView101);
+                    TextView textView102 = (TextView) findViewById(R.id.textView102);
 
+                    textView144.setText(String.format(Locale.US, "%.1f", ListGsp) + "");
+                    textView142.setText(String.format(Locale.US, "%.1f", ProfilPn) + "");
+                    textView143.setText(String.format(Locale.US, "%.1f", ProfilPs) + "");
+                    textView242.setText(String.format(Locale.US, "%.1f", TN25) + "");
+                    textView20.setText(String.format(Locale.US, "%.1f", К_6_35) + "");
+                    textView181.setText(String.format(Locale.US, "%.1f", Minvata) + "");
+                    textView24.setText(String.format(Locale.US, "%.1f", LentaArmo) + "");
+                    textView100.setText(String.format(Locale.US, "%.1f", LentaUplot) + "");
+                    textView101.setText(String.format(Locale.US, "%.1f", Fugen) + "");
+                    textView102.setText(String.format(Locale.US, "%.1f", Grunt) + "");
 
+                } else {
 
+                float S = (num002*num008);
+                float Skoef2 = S*num010*2; // Площадь с двох сторон + запас (коеф)
+                float Skoef1 = S*num010; // Площадь с одной стороны + запас (коеф)
+                float ListGsp = Skoef2/3;
+                float ProfilPn = (float) (Skoef1*0.7);
+                float ProfilPs = (float) (Skoef1*2.0);
+                float TN25 = Skoef1*29;
+                float К_6_35 = (float) (Skoef1*1.6);
+                float Minvata = Skoef1*1;
+                float LentaArmo = (float) (Skoef1*1.5);
+                float LentaUplot = (float) (Skoef1*1.2);
+                float Fugen = (float) (Skoef1*0.6);
+                float Grunt = (float) (Skoef1*0.2);
 
                 TextView textView142 = (TextView) findViewById(R.id.textView142);
                 TextView textView144 = (TextView) findViewById(R.id.textView144);
+                TextView textView143 = (TextView) findViewById(R.id.textView143);
+                TextView textView242 = (TextView) findViewById(R.id.textView242);
+                TextView textView20 = (TextView) findViewById(R.id.textView20);
+                TextView textView24 = (TextView) findViewById(R.id.textView24);
+                TextView textView181 = (TextView) findViewById(R.id.textView181);
+                TextView textView100 = (TextView) findViewById(R.id.textView100);
+                TextView textView101 = (TextView) findViewById(R.id.textView101);
+                TextView textView102 = (TextView) findViewById(R.id.textView102);
 
-
-                textView144.setText(String.format(Locale.US, "%.2f", Ves) + "");
-                textView142.setText(String.format(Locale.US, "%.2f", Stoimost) + "");
-
+                textView144.setText(String.format(Locale.US, "%.1f", ListGsp) + "");
+                textView142.setText(String.format(Locale.US, "%.1f", ProfilPn) + "");
+                textView143.setText(String.format(Locale.US, "%.1f", ProfilPs) + "");
+                textView242.setText(String.format(Locale.US, "%.1f", TN25) + "");
+                textView20.setText(String.format(Locale.US, "%.1f", К_6_35) + "");
+                textView181.setText(String.format(Locale.US, "%.1f", Minvata) + "");
+                textView24.setText(String.format(Locale.US, "%.1f", LentaArmo) + "");
+                textView100.setText(String.format(Locale.US, "%.1f", LentaUplot) + "");
+                textView101.setText(String.format(Locale.US, "%.1f", Fugen) + "");
+                textView102.setText(String.format(Locale.US, "%.1f", Grunt) + "");
 
 
 
@@ -4033,7 +4132,7 @@ public class ArmaturaActivity extends AppCompatActivity {
                 //Snackbar.make(view, "Подсчитано", Snackbar.LENGTH_SHORT)
                 //Snackbar.make(view, "Подсчитано", Snackbar.LENGTH_SHORT)
                 // .setAction("Action", null).show();
-            }
+            }}
         });
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
@@ -4041,14 +4140,28 @@ public class ArmaturaActivity extends AppCompatActivity {
             @Override
             public boolean onLongClick(View v) {
 
-
+                final TextView bill82 = (TextView) findViewById(R.id.textView143);
                 final TextView bill83 = (TextView) findViewById(R.id.textView142);
+                final TextView bill84 = (TextView) findViewById(R.id.textView20);
+                final TextView bill85 = (TextView) findViewById(R.id.textView242);
+                final TextView bill86 = (TextView) findViewById(R.id.textView24);
+                final TextView bill181 = (TextView) findViewById(R.id.textView181);
                 final TextView bill144 = (TextView) findViewById(R.id.textView144);
+                final TextView bill100 = (TextView) findViewById(R.id.textView100);
+                final TextView bill101 = (TextView) findViewById(R.id.textView101);
+                final TextView bill102 = (TextView) findViewById(R.id.textView102);
 
 
-
+                bill82.setText(00.00 + "");
                 bill83.setText(00.00 + "");
+                bill84.setText(00.00 + "");
+                bill85.setText(00.00 + "");
+                bill86.setText(00.00 + "");
+                bill181.setText(00.00 + "");
                 bill144.setText(00.00 + "");
+                bill100.setText(00.00 + "");
+                bill101.setText(00.00 + "");
+                bill102.setText(00.00 + "");
 
 
 
@@ -4143,7 +4256,17 @@ public class ArmaturaActivity extends AppCompatActivity {
         String savedText = sPref2.getString(SAVED_TEXT12, "");
         etText12.setText(savedText);
     }
-
+    void saveText13() {
+        sPref2 = getPreferences(MODE_PRIVATE);
+        SharedPreferences.Editor ed = sPref2.edit();
+        ed.putString(SAVED_TEXT13, etText13.getText().toString());
+        ed.commit();
+    }
+    void loadText13() {
+        sPref2 = getPreferences(MODE_PRIVATE);
+        String savedText = sPref2.getString(SAVED_TEXT13, "");
+        etText13.setText(savedText);
+    }
 
     void saveText23() {
         sPref3 = getPreferences(MODE_PRIVATE);
@@ -4302,7 +4425,6 @@ public class ArmaturaActivity extends AppCompatActivity {
         String savedText = sPref.getString(SAVED_TEXT80, "");
         etText80.setText(savedText);
     }
-
     void saveText81() {
         sPref = getPreferences(MODE_PRIVATE);
         SharedPreferences.Editor ed = sPref.edit();
@@ -4314,7 +4436,6 @@ public class ArmaturaActivity extends AppCompatActivity {
         String savedText = sPref.getString(SAVED_TEXT81, "");
         etText81.setText(savedText);
     }
-
     void saveText82() {
         sPref = getPreferences(MODE_PRIVATE);
         SharedPreferences.Editor ed = sPref.edit();
@@ -4327,8 +4448,51 @@ public class ArmaturaActivity extends AppCompatActivity {
         etText82.setText(savedText);
     }
 
+    void saveText84() {
+        sPref = getPreferences(MODE_PRIVATE);
+        SharedPreferences.Editor ed = sPref.edit();
+        ed.putString(SAVED_TEXT84, etText84.getText().toString());
+        ed.commit();
+    }
+    void loadText84() {
+        sPref = getPreferences(MODE_PRIVATE);
+        String savedText = sPref.getString(SAVED_TEXT84, "");
+        etText84.setText(savedText);
+    }
+    void saveText85() {
+        sPref = getPreferences(MODE_PRIVATE);
+        SharedPreferences.Editor ed = sPref.edit();
+        ed.putString(SAVED_TEXT85, etText85.getText().toString());
+        ed.commit();
+    }
+    void loadText85() {
+        sPref = getPreferences(MODE_PRIVATE);
+        String savedText = sPref.getString(SAVED_TEXT85, "");
+        etText85.setText(savedText);
+    }
 
-
+    void saveText86() {
+        sPref = getPreferences(MODE_PRIVATE);
+        SharedPreferences.Editor ed = sPref.edit();
+        ed.putString(SAVED_TEXT86, etText86.getText().toString());
+        ed.commit();
+    }
+    void loadText86() {
+        sPref = getPreferences(MODE_PRIVATE);
+        String savedText = sPref.getString(SAVED_TEXT86, "");
+        etText86.setText(savedText);
+    }
+    void saveText181() {
+        sPref = getPreferences(MODE_PRIVATE);
+        SharedPreferences.Editor ed = sPref.edit();
+        ed.putString(SAVED_TEXT181, etText181.getText().toString());
+        ed.commit();
+    }
+    void loadText181() {
+        sPref = getPreferences(MODE_PRIVATE);
+        String savedText = sPref.getString(SAVED_TEXT181, "");
+        etText181.setText(savedText);
+    }
 
     void saveText230() {
         sPref = getPreferences(MODE_PRIVATE);
@@ -4365,6 +4529,42 @@ public class ArmaturaActivity extends AppCompatActivity {
         etText231.setText(savedText);
     }
 
+    void saveText100() {
+        sPref = getPreferences(MODE_PRIVATE);
+        SharedPreferences.Editor ed = sPref.edit();
+        ed.putString(SAVED_TEXT100, etText100.getText().toString());
+        ed.commit();
+    }
+    void loadText100() {
+        sPref = getPreferences(MODE_PRIVATE);
+        String savedText = sPref.getString(SAVED_TEXT100, "");
+        etText100.setText(savedText);
+    }
+
+    void saveText101() {
+        sPref = getPreferences(MODE_PRIVATE);
+        SharedPreferences.Editor ed = sPref.edit();
+        ed.putString(SAVED_TEXT101, etText101.getText().toString());
+        ed.commit();
+    }
+    void loadText101() {
+        sPref = getPreferences(MODE_PRIVATE);
+        String savedText = sPref.getString(SAVED_TEXT101, "");
+        etText101.setText(savedText);
+    }
+
+    void saveText102() {
+        sPref = getPreferences(MODE_PRIVATE);
+        SharedPreferences.Editor ed = sPref.edit();
+        ed.putString(SAVED_TEXT102, etText102.getText().toString());
+        ed.commit();
+    }
+    void loadText102() {
+        sPref = getPreferences(MODE_PRIVATE);
+        String savedText = sPref.getString(SAVED_TEXT102, "");
+        etText102.setText(savedText);
+    }
+
 
 
 
@@ -4392,10 +4592,20 @@ public class ArmaturaActivity extends AppCompatActivity {
         saveText80();
         saveText81();
         saveText82();
+
+        saveText84();
+        saveText85();
+        saveText86();
         saveText12();
+        saveText13();
+        saveText181();
         saveText230();
         saveText231();
         saveText144();
+
+        saveText100();
+        saveText101();
+        saveText102();
 
 
 
@@ -4470,7 +4680,7 @@ public class ArmaturaActivity extends AppCompatActivity {
 
         //TextView r1-результат text1;
 
-        String emailSubject = getString(R.string.armatura1);
+        String emailSubject = getString(R.string.peregorodka_gsp);
         String na_email = getString(R.string.na_email);
 
         TextView ob_wir = (TextView) findViewById(R.id.textViewWir2);
@@ -4481,13 +4691,29 @@ public class ArmaturaActivity extends AppCompatActivity {
 
         TextView rez_text0 = (TextView) findViewById(R.id.textView144);
         TextView rez_text1 = (TextView) findViewById(R.id.textView142);
+        TextView rez_text2 = (TextView) findViewById(R.id.textView143);
+        TextView rez_text3 = (TextView) findViewById(R.id.textView242);
+        TextView rez_text4 = (TextView) findViewById(R.id.textView20);
+        TextView rez_text5 = (TextView) findViewById(R.id.textView24);
+        TextView rez_text51 = (TextView) findViewById(R.id.textView181);
 
+        TextView rez_text61 = (TextView) findViewById(R.id.textView100);
+        TextView rez_text71 = (TextView) findViewById(R.id.textView101);
+        TextView rez_text81 = (TextView) findViewById(R.id.textView102);
 
 
 
         String rez0 = rez_text0.getText().toString();
         String rez1 = rez_text1.getText().toString();
+        String rez2 = rez_text2.getText().toString();
+        String rez3 = rez_text3.getText().toString();
+        String rez4 = rez_text4.getText().toString();
+        String rez5 = rez_text5.getText().toString();
+        String rez51 = rez_text51.getText().toString();
 
+        String rez61 = rez_text61.getText().toString();
+        String rez71 = rez_text71.getText().toString();
+        String rez81 = rez_text81.getText().toString();
 
 
 
@@ -4498,13 +4724,20 @@ public class ArmaturaActivity extends AppCompatActivity {
 
 
 
-        String r0 = "Площадь потолка, m2:";
-        String r1 = "Плита 600х600, шт.:";
+        String r0 = "1.Лист ГСП, шт.:";
+        String r1 = "2.Профиль ПН 50x40 (75x40, 100x40), мп:";
+        String r2 = "3.Профиль ПС 50x50 (75x50, 100x50), мп:";
+        String r3 = "4.Шуруп TN 25, шт.:";
+        String r4 = "5.Шпаклевка Фуген, кг:";
+        String r51 = "6.Лента армирующая, мп:";
+        String r5 = "7.Дюбель К 6/35, шт.:";
+        String r61 = "8.Лента уплотнительная, мп:";
+        String r71 = "9.Грунтовка, л:";
+        String r81 = "10.Плита минераловатная, м2:";
 
 
-
-        String r6 = "Длина помещения, м:";
-        String r7 = "Ширина помещения, м:";
+        String r6 = "Длина перегородки, м:";
+        String r7 = "Высота перегородки, м:";
         String r8 = "Запас, коэф.:";
 
 
@@ -4517,7 +4750,14 @@ public class ArmaturaActivity extends AppCompatActivity {
 
                 (r0)+(rez0)+
                         "\n"+(r1)+(rez1)+
-
+                        "\n"+(r2)+(rez2)+
+                        "\n"+(r3)+(rez3)+
+                        "\n"+(r4)+(rez71)+
+                        "\n"+(r51)+(rez5)+
+                        "\n"+(r5)+(rez4)+
+                        "\n"+(r61)+(rez61)+
+                        "\n"+(r71)+(rez81)+
+                        "\n"+(r81)+(rez51)+
                         "\n"+"......."+
                         "\n"+(ida)+
                         "\n"+(r6)+(ob1)+

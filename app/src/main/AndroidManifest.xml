@@ -38,6 +38,11 @@
             android:name=".ArmstrongActivity"
             android:theme="@style/AppTheme.NoActionBar" />
 
+
+        <activity
+            android:name=".GspC111Activity"
+            android:theme="@style/AppTheme.NoActionBar" />
+
         <activity
             android:name=".ArmaturaActivity"
             android:theme="@style/AppTheme.NoActionBar" />

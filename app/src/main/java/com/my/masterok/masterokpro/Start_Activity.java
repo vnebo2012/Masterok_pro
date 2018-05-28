@@ -342,6 +342,16 @@ public class Start_Activity extends AppCompatActivity implements NavigationView.
 
     }
 
+    public void onClickGspC111(View view) {
+        Intent a = new Intent(this,GspC111Activity.class);
+        a.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(a);
+        long mills = 15L;
+        Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+        vibrator.vibrate(mills);
+
+    }
+
     public void onClickArmatura(View view) {
         Intent a = new Intent(this,ArmaturaActivity.class);
         a.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
